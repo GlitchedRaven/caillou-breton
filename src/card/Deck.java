@@ -13,21 +13,42 @@ public class Deck extends LinkedList<Card> {
 	public final static String[] TYPEOFDECK = {"Ingredient", "Ally"};
 	
 	//Matrice des cartes Ingrédients
-	public final static int[][] rayonDeLune1 = {{1,1,1,1}, {2,0,1,1}, {2,0,2,0}};
-	public final static int[][] rayonDeLune2 = {{2,0,1,1}, {1,3,0,0}, {0,1,2,1}};
-	public final static int[][] rayonDeLune3 = {{0,0,4,0}, {0,2,2,0}, {0,0,1,3}};
+	public final static int NUMBER_INGREDIENTS = 9;
+	public final static int[][] RAYON_DE_LUNE1 = {{1,1,1,1}, {2,0,1,1}, {2,0,2,0}};
+	public final static int[][] RAYON_DE_LUNE2 = {{2,0,1,1}, {1,3,0,0}, {0,1,2,1}};
+	public final static int[][] RAYON_DE_LUNE3 = {{0,0,4,0}, {0,2,2,0}, {0,0,1,3}};
 	
-	public final static int[][] chantDeSirene1 = {{1,3,1,0}, {1,2,1,1}, {0,1,4,0}};
-	public final static int[][] chantDeSirene2 = {{2,1,1,1}, {1,0,2,2}, {3,0,0,2}};
-	public final static int[][] chantDeSirene3 = {{1,2,2,0}, {1,1,2,1}, {2,0,1,2}};
+	public final static int[][] CHANT_DE_SIRENE1 = {{1,3,1,0}, {1,2,1,1}, {0,1,4,0}};
+	public final static int[][] CHANT_DE_SIRENE2 = {{2,1,1,1}, {1,0,2,2}, {3,0,0,2}};
+	public final static int[][] CHANT_DE_SIRENE3 = {{1,2,2,0}, {1,1,2,1}, {2,0,1,2}};
 	
-	public final static int[][] larmeDeDryade1 = {{2,1,1,2}, {1,1,1,3}, {2,0,2,2}};
-	public final static int[][] larmeDeDryade2 = {{0,3,0,3}, {2,1,3,0}, {1,1,3,1}};
-	public final static int[][] larmeDeDryade3 = {{1,2,1,2}, {1,0,1,4}, {2,4,0,0}};
+	public final static int[][] LARME_DE_DRYADE1 = {{2,1,1,2}, {1,1,1,3}, {2,0,2,2}};
+	public final static int[][] LARME_DE_DRYADE2 = {{0,3,0,3}, {2,1,3,0}, {1,1,3,1}};
+	public final static int[][] LARME_DE_DRYADE3 = {{1,2,1,2}, {1,0,1,4}, {2,4,0,0}};
 	
-	//public final static ArrayList<int[][]> ListeCarte = new ArrayList<int[][]>(rayonDeLune1, rayonDeLune2]);
+	public final static int[][][] INGREDIENT_CARDS = {RAYON_DE_LUNE1, RAYON_DE_LUNE2, RAYON_DE_LUNE3, 
+														CHANT_DE_SIRENE1, CHANT_DE_SIRENE2, CHANT_DE_SIRENE3,
+														LARME_DE_DRYADE1, LARME_DE_DRYADE2, LARME_DE_DRYADE3};
+	public final static String[] INGREDIENT_NAMES = {"Rayon De Lune", "Chant de Sirène", "Larme de Dryade", 
+														"Fontaine d'eau pure", "Poudre d'Or"};
+	//public final static ArrayList<int[][]> ListeCarte = new ArrayList<int[][]>(RAYON_DE_LUNE1, RAYON_DE_LUNE2]);
 	//Fin matrice des cartes ingrédients
 	
+	//Matrice des cartes Alliés
+	public final static int NUMBER_ALLY = 2;
+	public final static int[] TAUPE_GEANTE1 = {1,1,1,1};
+	public final static int[] TAUPE_GEANTE2 = {0,2,2,0};
+	public final static int[] TAUPE_GEANTE3 = {0,1,2,1};
+	
+	public final static int[] CHIEN_DE_GARDE1 = {2,0,2,0};
+	public final static int[] CHIEN_DE_GARDE2 = {1,2,0,1};
+	public final static int[] CHIEN_DE_GARDE3 = {0,1,3,0};
+	
+	public final static int[][] ALLY_CARDS = {TAUPE_GEANTE1, TAUPE_GEANTE1, TAUPE_GEANTE1,
+												CHIEN_DE_GARDE1, CHIEN_DE_GARDE1, CHIEN_DE_GARDE1};
+	public final static String[] ALLY_NAMES = {"Taupe Géante", "Chien de Garde"};
+	
+	//Fin Matrice des cartes Alliés
 
 	
 	private int typeOfDeck;
@@ -45,17 +66,16 @@ public class Deck extends LinkedList<Card> {
 		switch(this.typeOfDeck) {
 		
 		case ALLY:
+			for(int i = 0; i < NUMBER_ALLY ; i++) {
+				this.push(new Ally(ALLY_NAMES[i/3], ALLY_CARDS[i]));
+			}
 			break;
 		case INGREDIENT:
-			this.push(new Ingredient("Rayon de Lune", rayonDeLune1[0], rayonDeLune1[1], rayonDeLune1[2]));
-			this.push(new Ingredient("Rayon de Lune", rayonDeLune2[0], rayonDeLune2[1], rayonDeLune2[2]));
-			this.push(new Ingredient("Rayon de Lune", rayonDeLune3[0], rayonDeLune3[1], rayonDeLune3[2]));
-			this.push(new Ingredient("Chant de Sirene", chantDeSirene1[0], chantDeSirene1[1], chantDeSirene1[2]));
-			this.push(new Ingredient("Chant de Sirene", chantDeSirene2[0], chantDeSirene2[1], chantDeSirene2[2]));
-			this.push(new Ingredient("Chant de Sirene", chantDeSirene3[0], chantDeSirene3[1], chantDeSirene3[2]));
-			this.push(new Ingredient("Larme de Dryade", larmeDeDryade1[0], larmeDeDryade1[1], larmeDeDryade1[2]));
-			this.push(new Ingredient("Larme de Dryade", larmeDeDryade2[0], larmeDeDryade2[1], larmeDeDryade2[2]));
-			this.push(new Ingredient("Larme de Dryade", larmeDeDryade3[0], larmeDeDryade3[1], larmeDeDryade3[2]));
+			for(int i = 0; i < NUMBER_INGREDIENTS ; i++) {
+				this.push(new Ingredient(INGREDIENT_NAMES[i/3], INGREDIENT_CARDS[i][0], 
+											INGREDIENT_CARDS[i][1], INGREDIENT_CARDS[i][2]));
+			}
+			
 			this.shuffle();
 			this.shuffle();
 			break;
