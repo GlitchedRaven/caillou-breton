@@ -37,18 +37,8 @@ public abstract class Game {
 		}
 		// Instantiate the players END
 		
-		// Distribute cards
-		Deck deck = new Deck(Deck.INGREDIENT);
-		for(ListIterator<Player> p = players.listIterator(); p.hasNext();) {
-			Player player = p.next();
-			for(int i = 0; i < 4 ; i++)
-				player.setHand(deck.remove()); //Chaque joueur pioche 4 cartes 
-			
-			
-		}
-		//Distribute cards END
+		
 	}
-
 
 
 	public abstract ArrayList<Player> designateWinner(); 

@@ -1,8 +1,12 @@
 package card;
 
+import java.util.ArrayList;
 //import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.ListIterator;
+
+import player.Player;
 
 
 public class Deck extends LinkedList<Card> {
@@ -58,6 +62,16 @@ public class Deck extends LinkedList<Card> {
 		Collections.shuffle(this);
 	
 }
+	public void distribute(int numberToDistribute, ArrayList<Player> players ) {
+		for(ListIterator<Player> p = players.listIterator(); p.hasNext();) {
+			Player player = p.next();
+			for(int i = 0; i < numberToDistribute ; i++)
+				player.setHand(this.remove()); 
+			
+			
+		}
+		
+	}
 
 	
 	public Deck(int typeOfDeck) {
@@ -68,7 +82,10 @@ public class Deck extends LinkedList<Card> {
 		case ALLY:
 			for(int i = 0; i < NUMBER_ALLY ; i++) {
 				this.push(new Ally(ALLY_NAMES[i/3], ALLY_CARDS[i]));
+				
 			}
+			this.shuffle();
+			this.shuffle();
 			break;
 		case INGREDIENT:
 			for(int i = 0; i < NUMBER_INGREDIENTS ; i++) {

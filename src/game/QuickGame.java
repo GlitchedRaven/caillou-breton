@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.Scanner;
 
+import card.Deck;
 import card.Ingredient;
 import player.Player;
 import view.Console;
@@ -34,10 +35,12 @@ public class QuickGame extends Game {
 			}
 				return winner;
 			}
-			//TODO : cas d'égalité
 
 	public QuickGame() {
 		super();
+		// Distribute cards
+				Deck deck = new Deck(Deck.INGREDIENT);
+				deck.distribute(4, players);
 	}
 
 

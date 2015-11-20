@@ -16,7 +16,17 @@ public class Player {
 	private ArrayList<Card> hand;
 	private Game currentGame;
 	
-	
+	private int stealRocks(int toSteal) {
+		if( toSteal <= this.nbRocks) {
+			this.nbRocks -= toSteal;
+		return toSteal; 
+		}
+		else {
+			int tmp = this.nbRocks;
+			this.nbRocks = 0;
+			return (-tmp + toSteal);
+		}
+	}
 	public void playFertilizer(Ingredient card) {
 		int season = currentGame.getSeason();
 		int[] fertilizerStrength = card.getFertilizerVector();
@@ -42,7 +52,7 @@ public class Player {
 	public void playFarfadet(Ingredient card, Player victim) {
 		int season = currentGame.getSeason();
 		int[] farfadetStrength = card.getFarfadetVector();
-		
+	
 		int rockStolen = victim.stealRocks(farfadetStrength[season]);
 		
 		this.nbRocks += rockStolen;
@@ -79,15 +89,16 @@ public class Player {
 	public int getNbRocks() {
 		return nbRocks;
 	}
-
 	public void setNbRocks(int nbRocks) {
-		this.nbRocks = nbRocks;
+		if(nbRocks > 0)
+			this.nbRocks = nbRocks;
+		else
+			this.nbRocks = 0;
 	}
 
 	public int getNbMenhirs() {
 		return nbMenhirs;
 	}
-
 	public void setNbMenhirs(int nbMenhirs) {
 		if(nbMenhirs > 0)
 			this.nbMenhirs = nbMenhirs;
@@ -101,17 +112,7 @@ public class Player {
 	public void setWatchDogProtection(int[] watchDogProtection) {
 		this.watchDogProtection = watchDogProtection;
 	}
-	public int stealRocks(int toSteal) {
-		if( toSteal <= this.nbRocks) {
-			this.nbRocks -= toSteal;
-		return toSteal; 
-		}
-		else {
-			int tmp = this.nbRocks;
-			this.nbRocks = 0;
-			return (-tmp + toSteal);
-		}
-	}
+	
 		
 	public String getName() {
 		return name;

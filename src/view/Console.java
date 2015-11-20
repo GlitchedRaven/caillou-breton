@@ -6,7 +6,7 @@ import java.util.Scanner;
 import game.Game;
 import player.*;
 
-public class Console {
+public class Console implements GameView {
 	
 	public void getPlayerDetails(Player player) {
 		System.out.println("\nAu tour de " + player.getName());
@@ -35,6 +35,16 @@ public class Console {
 	public int choiceVictim(Scanner userInput) {
 		System.out.println("Quel joueur souhaitez vous voler ?");
 		return userInput.nextInt();  
+	}
+	
+	public boolean choiceAllyOrRock(Scanner userInput, Player player){
+		System.out.println(player.getName() + ", souhaitez vous piocher un Allié ? O(ui)/N(on) (Vous commencerez la partie sans"
+							+ "graines !");
+		if(userInput.next() == "O")
+			return true;
+		else
+			return false;
+		
 	}
 	
 	public void displayWinner(ArrayList<Player> winner) {
