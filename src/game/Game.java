@@ -1,11 +1,9 @@
 package game;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 import java.util.Scanner;
-
 import player.Player;
-import card.*;
+
 
 public abstract class Game {
 	

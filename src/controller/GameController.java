@@ -20,14 +20,14 @@ public class GameController {
 	}
 
 
-	public void doAction(String playedAction, int playedCard, Player currentPlayer, Scanner userInput) {
+	public void doAction(String playedAction, int playedCard, Player currentPlayer) {
 		
 		if(playedAction.equals("G"))
 			currentPlayer.playGiant((Ingredient) currentPlayer.getHand().get(playedCard));
 		else if(playedAction.equals("E"))
 			currentPlayer.playFertilizer((Ingredient) currentPlayer.getHand().get(playedCard));
 		else if(playedAction.equals("F")) {
-			int victim = view.choiceVictim(userInput);
+			int victim = view.choiceVictim();
 			currentPlayer.playFarfadet((Ingredient) currentPlayer.getHand().get(playedCard), game.getPlayers().get(victim - 1));
 		}
 		else
@@ -35,5 +35,7 @@ public class GameController {
 	
 		currentPlayer.getHand().remove(playedCard); //On retire la carte jouée
 	}
-
+	public void changeSeason() {
+		game.setSeason();
+	}
 }

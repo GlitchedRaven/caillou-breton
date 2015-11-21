@@ -2,6 +2,7 @@ package player;
 
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import game.*;
 import card.*;
@@ -39,6 +40,7 @@ public class Player {
 			this.nbMenhirs = this.nbMenhirs + fertilizerStrength[season];
 			this.nbRocks -= fertilizerStrength[season];
 		}
+		this.hand.remove(card);
 	}
 	
 	public void playGiant(Ingredient card) {
@@ -46,16 +48,18 @@ public class Player {
 		int[] giantStrength = card.getGiantVector();
 		
 		this.nbRocks += giantStrength[season];
+		this.hand.remove(card);
 		
 	}
 
 	public void playFarfadet(Ingredient card, Player victim) {
 		int season = currentGame.getSeason();
 		int[] farfadetStrength = card.getFarfadetVector();
-	
+		
 		int rockStolen = victim.stealRocks(farfadetStrength[season]);
 		
 		this.nbRocks += rockStolen;
+		this.hand.remove(card)
 		
 	
 	}

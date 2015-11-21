@@ -8,6 +8,8 @@ import player.*;
 
 public class Console implements GameView {
 	
+	private Scanner userInput;
+	
 	public void getPlayerDetails(Player player) {
 		System.out.println("\nAu tour de " + player.getName());
 		System.out.println(player.toString());
@@ -21,26 +23,33 @@ public class Console implements GameView {
 												+ "\n" + " Graine(s) : " + player.getNbRocks());
 		}
 	}
-	public int choiceCard(Scanner userInput) {
+	public int choiceCard() {
 		
 		System.out.println("Quelle carte voulez-vous jouer ?");
-		return userInput.nextInt() - 1;
+		return this.userInput.nextInt() - 1;
 	}	
 	
-	public String choiceAction(Scanner userInput){
+	public String choiceAction(){
 		System.out.println("Quelle action souhaitez vous effectuer : G/E/F ?");
-		return userInput.next();
+		return this.userInput.next();
 	}	
 	
-	public int choiceVictim(Scanner userInput) {
+	public boolean choicePlayWatchDog(Player victim) {
+		System.out.println(victim.getName() +", souhaitez vous jouer votre Chien de Garde en réponse ?  O(ui)/N(on)");
+		if(this.userInput.next() == "O")
+			return true;
+		else
+			return false;
+	}
+	public int choiceVictim() {
 		System.out.println("Quel joueur souhaitez vous voler ?");
-		return userInput.nextInt();  
+		return this.userInput.nextInt();  
 	}
 	
-	public boolean choiceAllyOrRock(Scanner userInput, Player player){
+	public boolean choiceAllyOrRock(Player player){
 		System.out.println(player.getName() + ", souhaitez vous piocher un Allié ? O(ui)/N(on) (Vous commencerez la partie sans"
 							+ "graines !");
-		if(userInput.next() == "O")
+		if(this.userInput.next() == "O")
 			return true;
 		else
 			return false;
@@ -55,5 +64,6 @@ public class Console implements GameView {
 	
 	public Console(){
 		super();
+		this.userInput = new Scanner(System.in);
 	}
 }

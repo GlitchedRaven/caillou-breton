@@ -2,7 +2,6 @@ package game;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
-import java.util.Scanner;
 
 import card.Deck;
 import card.Ingredient;
@@ -46,7 +45,6 @@ public class QuickGame extends Game {
 
 	public static void main(String[] args) {
 		QuickGame game = new QuickGame();
-		Scanner userInput = new Scanner( System.in );
 		Console console = new Console();
 		
 		while(game.getSeason() <= WINTER) {
@@ -56,8 +54,8 @@ public class QuickGame extends Game {
 				
 				console.getGameDetails(game);
 				console.getPlayerDetails(currentPlayer);
-				int playedCard = console.choiceCard(userInput);
-				String playedAction = console.choiceAction(userInput);
+				int playedCard = console.choiceCard();
+				String playedAction = console.choiceAction();
 				
 				
 				if(playedAction.equals("G"))
@@ -65,19 +63,18 @@ public class QuickGame extends Game {
 				else if(playedAction.equals("E"))
 					currentPlayer.playFertilizer((Ingredient) currentPlayer.getHand().get(playedCard));
 				else if(playedAction.equals("F")) {
-					int victim = console.choiceVictim(userInput);
+					int victim = console.choiceVictim();
 					currentPlayer.playFarfadet((Ingredient) currentPlayer.getHand().get(playedCard), game.getPlayers().get(victim - 1));
 				}
 				else
 					System.out.println("Tour passé");
 				
-				currentPlayer.getHand().remove(playedCard); //On retire la carte jouée
 			}
 			game.setSeason(); // Change the season to the next one
 		}
 			
 			console.displayWinner(game.designateWinner());
-			userInput.close();
+			
 	}
 
 }
