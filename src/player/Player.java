@@ -59,7 +59,7 @@ public class Player {
 		int rockStolen = victim.stealRocks(farfadetStrength[season]);
 		
 		this.nbRocks += rockStolen;
-		this.hand.remove(card)
+		this.hand.remove(card);
 		
 	
 	}
