@@ -2,7 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import player.Player;
+import player.*;
 
 
 public abstract class Game {
@@ -24,17 +24,33 @@ public abstract class Game {
 		this.season = SPRING;
 		
 		//Instantiate the players
-		System.out.println("Combien de joueurs ?");
-		int nbJoueur = user_input.nextInt();
-		this.players = new ArrayList<Player>();
-		for(int i = 0; i < nbJoueur ; i++) {
-			System.out.println("Quel nom pour le joueur " + (i+1) + " ?");
-			String name = user_input.next();
-			
-			players.add(i, new Player(name, this));
-		}
-		// Instantiate the players END
-		
+				System.out.println("Combien de joueurs AI?");
+				int nbJoueurAI = user_input.nextInt();
+				this.players = new ArrayList<Player>();
+				for(int i = 0; i < nbJoueurAI ; i++) {
+					System.out.println("Quel nom pour le joueur AI " + (i+1) + " ?");
+					String name = user_input.next();
+					System.out.println("Quelle difficulté pour le joueur AI "+ name + "? (facile/moyen)");
+					String difficulté = user_input.next();
+					
+					if (difficulté == "facile"){
+						players.add(new AIplayer(name, this, new FirstCard()));
+					} else if (difficulté == "moyen"){
+						players.add(new AIplayer(name, this, new Grow()));
+					} else {
+						players.add(new AIplayer(name, this, new FirstCard()));
+					}
+					
+				}
+				System.out.println("Combien de joueurs humains?");
+				int nbJoueur = user_input.nextInt();
+				for(int i = 0; i < nbJoueur ; i++) {
+					System.out.println("Quel nom pour le joueur humain " + (i+1) + " ?");
+					String name = user_input.next();
+					
+					players.add(new HumanPlayer(name, this));
+				}
+				// Instantiate the players END
 		
 	}
 

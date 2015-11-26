@@ -2,13 +2,13 @@ package player;
 
 
 import java.util.ArrayList;
-import java.util.ListIterator;
+
 
 import game.*;
 import card.*;
 
 
-public class Player {
+public abstract class Player {
 	
 	private String name;
 	private int nbRocks;
@@ -133,6 +133,9 @@ public class Player {
 	@Override
 	public String toString() {
 		return "Graine(s)=" + nbRocks + "\n"+ "Menhir(s)=" + nbMenhirs + "\n\n" + " Main=" + hand.toString() +"\n";
+	}
+	public Game getCurrentGame() {
+		return currentGame;
 	}
 	
 	

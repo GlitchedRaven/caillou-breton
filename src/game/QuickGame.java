@@ -5,7 +5,7 @@ import java.util.ListIterator;
 
 import card.Deck;
 import card.Ingredient;
-import player.Player;
+import player.*;
 import view.Console;
 
 public class QuickGame extends Game {
@@ -51,24 +51,29 @@ public class QuickGame extends Game {
 			
 			for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
 				Player currentPlayer = p.next();
-				
-				console.getGameDetails(game);
-				console.getPlayerDetails(currentPlayer);
-				int playedCard = console.choiceCard();
-				String playedAction = console.choiceAction();
-				
-				
-				if(playedAction.equals("G"))
-					currentPlayer.playGiant((Ingredient) currentPlayer.getHand().get(playedCard));
-				else if(playedAction.equals("E"))
-					currentPlayer.playFertilizer((Ingredient) currentPlayer.getHand().get(playedCard));
-				else if(playedAction.equals("F")) {
-					int victim = console.choiceVictim();
-					currentPlayer.playFarfadet((Ingredient) currentPlayer.getHand().get(playedCard), game.getPlayers().get(victim - 1));
+			
+				if (currentPlayer instanceof HumanPlayer) {
+					console.getGameDetails(game);
+					console.getPlayerDetails(currentPlayer);
+					int playedCard = console.choiceCard();
+					String playedAction = console.choiceAction();
+					
+					if(playedAction.equals("G"))
+						currentPlayer.playGiant((Ingredient) currentPlayer.getHand().get(playedCard));
+					else if(playedAction.equals("E"))
+						currentPlayer.playFertilizer((Ingredient) currentPlayer.getHand().get(playedCard));
+					else if(playedAction.equals("F")) {
+						int victim = console.choiceVictim();
+						currentPlayer.playFarfadet((Ingredient) currentPlayer.getHand().get(playedCard), game.getPlayers().get(victim - 1));
 				}
-				else
-					System.out.println("Tour passé");
-				
+					else
+						System.out.println("Tour passé");
+					
+				} else if(currentPlayer instanceof AIplayer){
+					//console.getPlayerDetails(currentPlayer);
+					((AIplayer) currentPlayer).playACard();
+					//console.getPlayerDetails(currentPlayer);
+					}
 			}
 			game.setSeason(); // Change the season to the next one
 		}
@@ -78,3 +83,4 @@ public class QuickGame extends Game {
 	}
 
 }
+

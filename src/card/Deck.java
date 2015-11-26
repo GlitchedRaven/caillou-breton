@@ -30,12 +30,37 @@ public class Deck extends LinkedList<Card> {
 	public final static int[][] LARME_DE_DRYADE2 = {{0,3,0,3}, {2,1,3,0}, {1,1,3,1}};
 	public final static int[][] LARME_DE_DRYADE3 = {{1,2,1,2}, {1,0,1,4}, {2,4,0,0}};
 	
+	public final static int[][] FONTAINE_D_EAU_PURE1 = {{1,3,1,2}, {2,1,2,2}, {0,0,3,4}};
+	public final static int[][] FONTAINE_D_EAU_PURE2 = {{2,2,0,3}, {1,1,4,1}, {1,2,1,3}};
+	public final static int[][] FONTAINE_D_EAU_PURE3 = {{2,2,3,1}, {2,3,0,3}, {1,1,3,3}};
+	 			
+	public final static int[][] POUDRE_D_OR1 = {{2,2,3,1}, {2,3,0,3}, {1,1,3,3}};
+	public final static int[][] POUDRE_D_OR2 = {{2,2,2,2}, {0,4,4,0}, {1,3,2,2}};
+	public final static int[][] POUDRE_D_OR3 = {{3,1,3,1}, {1,4,2,1}, {2,4,1,1}};
+	 	
+	public final static int[][] RACINE_D_ARC_EN_CIEL1 = {{4,1,1,1}, {1,2,1,3}, {1,2,2,2}};
+	public final static int[][] RACINE_D_ARC_EN_CIEL2 = {{2,3,2,0}, {0,4,3,0}, {2,1,1,3}};
+	public final static int[][] RACINE_D_ARC_EN_CIEL3 = {{2,2,3,0}, {1,1,1,4}, {2,0,3,2}};
+	 	
+	public final static int[][] ESPRIT_DE_DOLMEN1 = {{4,1,1,1}, {1,2,1,3}, {1,2,2,2}};
+	public final static int[][] ESPRIT_DE_DOLMEN2 = {{2,4,1,2}, {2,2,2,3}, {1,4,3,1}};
+	public final static int[][] ESPRIT_DE_DOLMEN3 = {{3,3,3,0}, {1,3,3,2}, {2,3,1,3}};
+	 	
+	public final static int[][] RIRE_DE_FEE1 = {{1,2,2,1}, {1,2,3,0}, {0,2,2,2}};
+	public final static int[][] RIRE_DE_FEE2 = {{4,0,1,1}, {1,1,3,1}, {0,0,3,3}};
+	public final static int[][] RIRE_DE_FEE3 = {{2,0,1,3}, {0,3,0,3}, {1,2,2,1}};
+	
 	public final static int[][][] INGREDIENT_CARDS = {RAYON_DE_LUNE1, RAYON_DE_LUNE2, RAYON_DE_LUNE3, 
 														CHANT_DE_SIRENE1, CHANT_DE_SIRENE2, CHANT_DE_SIRENE3,
-														LARME_DE_DRYADE1, LARME_DE_DRYADE2, LARME_DE_DRYADE3};
+														LARME_DE_DRYADE1, LARME_DE_DRYADE2, LARME_DE_DRYADE3,
+														FONTAINE_D_EAU_PURE1, FONTAINE_D_EAU_PURE2, FONTAINE_D_EAU_PURE3,
+														POUDRE_D_OR1, POUDRE_D_OR2, POUDRE_D_OR3, RACINE_D_ARC_EN_CIEL1, 
+														RACINE_D_ARC_EN_CIEL2, RACINE_D_ARC_EN_CIEL3, ESPRIT_DE_DOLMEN1,
+														ESPRIT_DE_DOLMEN2, ESPRIT_DE_DOLMEN3, RIRE_DE_FEE1};
 	public final static String[] INGREDIENT_NAMES = {"Rayon De Lune", "Chant de Sirène", "Larme de Dryade", 
-														"Fontaine d'eau pure", "Poudre d'Or"};
-	//public final static ArrayList<int[][]> ListeCarte = new ArrayList<int[][]>(RAYON_DE_LUNE1, RAYON_DE_LUNE2]);
+														"Fontaine d'eau pure", "Poudre d'Or", "Racine d'arcg-en-ciel", 
+														"Esprit de Dolmen", "Rire de fée"};
+	
 	//Fin matrice des cartes ingrédients
 	
 	//Matrice des cartes Alliés
