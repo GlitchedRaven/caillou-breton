@@ -1,5 +1,6 @@
 package card;
 
+import java.util.Arrays;
 
 public class Ally extends Card {
 
@@ -18,5 +19,9 @@ public class Ally extends Card {
 		this.strengthVector = strengthVector;
 		
 	}
-
+	
+	@Override
+	public String toString() {
+		return super.getName() + " :  \n\tForce = "  + Arrays.toString(strengthVector) + "\n";
+	}
 }

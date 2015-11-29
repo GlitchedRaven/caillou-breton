@@ -16,7 +16,6 @@ public class QuickGame extends Game {
 			winner.add(this.players.get(0));
 			
 			for(ListIterator<Player> p = players.listIterator(); p.hasNext();){
-				p.next(); // Skip the first player
 				Player player = p.next();
 				if(player.getNbMenhirs() > winner.get(0).getNbMenhirs()) {
 					winner.clear();
@@ -27,7 +26,8 @@ public class QuickGame extends Game {
 						winner.clear();
 						winner.add(0, player);
 					}
-					else if (player.getNbRocks() == winner.get(0).getNbRocks()) {
+					else if ((player.getNbRocks() == winner.get(0).getNbRocks())
+							&& (player != this.players.get(0))) {  // Pour ne pas ajouter le joueur 1 deux fois à la liste
 						winner.add(player);
 					}
 				}

@@ -10,6 +10,10 @@ public class Console implements GameView {
 	
 	private Scanner userInput;
 	
+	public int choiceTypeOfGame() {
+		System.out.println("Souhaitez-vous faire une partie rapide (1) ou une partie avancée (2) ?");
+		return userInput.nextInt();
+	}
 	public void getPlayerDetails(Player player) {
 		System.out.println("\nAu tour de " + player.getName());
 		System.out.println(player.toString());
@@ -49,7 +53,7 @@ public class Console implements GameView {
 	public boolean choiceAllyOrRock(Player player){
 		System.out.println(player.getName() + ", souhaitez vous piocher un Allié ? O(ui)/N(on) (Vous commencerez la partie sans"
 							+ "graines !");
-		if(this.userInput.next() == "O")
+		if(this.userInput.next().equals("O"))
 			return true;
 		else
 			return false;

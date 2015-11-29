@@ -17,7 +17,7 @@ public class Deck extends LinkedList<Card> {
 	public final static String[] TYPEOFDECK = {"Ingredient", "Ally"};
 	
 	//Matrice des cartes Ingrédients
-	public final static int NUMBER_INGREDIENTS = 9;
+	
 	public final static int[][] RAYON_DE_LUNE1 = {{1,1,1,1}, {2,0,1,1}, {2,0,2,0}};
 	public final static int[][] RAYON_DE_LUNE2 = {{2,0,1,1}, {1,3,0,0}, {0,1,2,1}};
 	public final static int[][] RAYON_DE_LUNE3 = {{0,0,4,0}, {0,2,2,0}, {0,0,1,3}};
@@ -56,15 +56,16 @@ public class Deck extends LinkedList<Card> {
 														FONTAINE_D_EAU_PURE1, FONTAINE_D_EAU_PURE2, FONTAINE_D_EAU_PURE3,
 														POUDRE_D_OR1, POUDRE_D_OR2, POUDRE_D_OR3, RACINE_D_ARC_EN_CIEL1, 
 														RACINE_D_ARC_EN_CIEL2, RACINE_D_ARC_EN_CIEL3, ESPRIT_DE_DOLMEN1,
-														ESPRIT_DE_DOLMEN2, ESPRIT_DE_DOLMEN3, RIRE_DE_FEE1};
+														ESPRIT_DE_DOLMEN2, ESPRIT_DE_DOLMEN3, RIRE_DE_FEE1, RIRE_DE_FEE2, RIRE_DE_FEE3};
 	public final static String[] INGREDIENT_NAMES = {"Rayon De Lune", "Chant de Sirène", "Larme de Dryade", 
 														"Fontaine d'eau pure", "Poudre d'Or", "Racine d'arcg-en-ciel", 
 														"Esprit de Dolmen", "Rire de fée"};
+	public final static int NUMBER_INGREDIENTS = INGREDIENT_CARDS.length;
 	
 	//Fin matrice des cartes ingrédients
 	
 	//Matrice des cartes Alliés
-	public final static int NUMBER_ALLY = 2;
+	
 	public final static int[] TAUPE_GEANTE1 = {1,1,1,1};
 	public final static int[] TAUPE_GEANTE2 = {0,2,2,0};
 	public final static int[] TAUPE_GEANTE3 = {0,1,2,1};
@@ -76,6 +77,7 @@ public class Deck extends LinkedList<Card> {
 	public final static int[][] ALLY_CARDS = {TAUPE_GEANTE1, TAUPE_GEANTE1, TAUPE_GEANTE1,
 												CHIEN_DE_GARDE1, CHIEN_DE_GARDE1, CHIEN_DE_GARDE1};
 	public final static String[] ALLY_NAMES = {"Taupe Géante", "Chien de Garde"};
+	public final static int NUMBER_ALLY = ALLY_CARDS.length;
 	
 	//Fin Matrice des cartes Alliés
 
@@ -120,6 +122,7 @@ public class Deck extends LinkedList<Card> {
 			
 			this.shuffle();
 			this.shuffle();
+			
 			break;
 		default:
 			break;
