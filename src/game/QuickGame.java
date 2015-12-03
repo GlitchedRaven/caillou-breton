@@ -7,6 +7,7 @@ import card.Deck;
 import card.Ingredient;
 import player.*;
 import view.Console;
+import view.GraphicalView;
 
 public class QuickGame extends Game {
 
@@ -45,7 +46,7 @@ public class QuickGame extends Game {
 
 	public static void main(String[] args) {
 		QuickGame game = new QuickGame();
-		Console console = new Console();
+		GraphicalView console = new GraphicalView(game);
 		
 		while(game.getSeason() <= WINTER) {
 			
