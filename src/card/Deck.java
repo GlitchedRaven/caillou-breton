@@ -108,7 +108,7 @@ public class Deck extends LinkedList<Card> {
 		
 		case ALLY:
 			for(int i = 0; i < NUMBER_ALLY ; i++) {
-				this.push(new Ally(ALLY_NAMES[i/3], ALLY_CARDS[i]));
+				this.push(new Ally(ALLY_NAMES[i/3], ALLY_CARDS[i], Ally.TYPES[i/3]));
 				
 			}
 			this.shuffle();
