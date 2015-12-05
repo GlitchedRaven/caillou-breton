@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.ListIterator;
 import card.*;
 import player.AIplayer;
@@ -20,13 +21,14 @@ public class AdvancedGame extends Game {
 		ArrayList<Player> winner = new ArrayList<Player>();
 		winner.add(this.players.get(0));
 		
-		for(ListIterator<Player> p = players.listIterator(); p.hasNext();){
+		for(ListIterator<Player> p = this.players.listIterator(); p.hasNext();){
 			Player player = p.next();
-			if(playerScore.get(player) > playerScore.get(winner.get(0))) {
+			if(this.playerScore.get(player) > this.playerScore.get(winner.get(0))) {
 				winner.clear();
 				winner.add(0, player);
 			}
-			else if(playerScore.get(player) == playerScore.get(winner.get(0))) {
+			else if((this.playerScore.get(player) == this.playerScore.get(winner.get(0))) 
+					&& player != this.players.get(0) ) {
 				winner.add(player);
 			}
 		}
@@ -37,9 +39,9 @@ public class AdvancedGame extends Game {
 		super();
 		this.round = 1;
 		this.playerScore = new HashMap<Player, Integer>();
-		for(Player p : playerScore.keySet())
-			playerScore.put(p, 0);
-		
+		for(Iterator<Player> p = this.players.iterator(); p.hasNext();){
+			this.playerScore.put(p.next(), 0);
+		}
 		this.allyDeck = new Deck(Deck.ALLY);
 		//this.ingredientDeck = new Deck(Deck.INGREDIENT);
 		
@@ -96,6 +98,8 @@ public class AdvancedGame extends Game {
 			for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
 				
 				Player player = p.next();
+				player.setNbMenhirs(0);
+				player.setNbRocks(2);
 				if(player instanceof HumanPlayer){
 					boolean drawAlly = console.choiceAllyOrRock(player);
 
