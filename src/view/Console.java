@@ -53,7 +53,7 @@ public class Console implements GameView {
 	
 	public boolean choiceAllyOrRock(Player player){
 		System.out.println(player.getName() + ", souhaitez vous piocher un Allié ? O(ui)/N(on) (Vous commencerez la partie sans"
-							+ "graines !");
+							+ " graines !");
 		if(this.userInput.next().equals("O"))
 			return true;
 		else
