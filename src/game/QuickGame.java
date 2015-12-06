@@ -70,7 +70,8 @@ public class QuickGame extends Game {
 						System.out.println("Tour passé");
 					
 				} else if(currentPlayer instanceof AIplayer){
-					//console.getPlayerDetails(currentPlayer);
+					console.getGameDetails(game);
+					console.getPlayerDetails(currentPlayer);
 					((AIplayer) currentPlayer).playACard();
 					//console.getPlayerDetails(currentPlayer);
 					}

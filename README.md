@@ -23,3 +23,11 @@ Ce que le jeu ne contient pas encore :
 			et les parties critiques du programme (distribution des cartes, choix des actions, executions des actions etc...) mériteraient une gestion
 			des exceptions
 				
+				
+Idiosyncrasie de jeu :
+
+	- Pour choisir un joueur à attaquer il faut donner son numéro (à partir de 1 )et non pas son nom
+	- Pour choisir une carte il faut donner sa position dans la main (à partir de 1)
+	
+ATTENTION : il arrive que la console se ferme en fin de partie sans que vous ayez eu le temps de voir les scores, ceci n'est pas dû au code mais
+		à Windows qui ferme la console en fin d'execution du programme. Lancez le script depuis un terminal pour résoudre le problème. 

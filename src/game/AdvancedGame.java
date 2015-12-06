@@ -171,7 +171,9 @@ public class AdvancedGame extends Game {
 					
 				}
 					else if(currentPlayer instanceof AIplayer){
+						console.getGameDetails(game);
 						console.getPlayerDetails(currentPlayer);
+						
 						((AIplayer) currentPlayer).playACard();
 						//console.getPlayerDetails(currentPlayer);
 						}
