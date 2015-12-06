@@ -1,4 +1,4 @@
-# caillou-breton
+﻿# caillou-breton
 
 Implementation of the menhir card game 
 
@@ -22,4 +22,6 @@ Ce que le jeu ne contient pas encore :
 	- Une implémentation des exceptions vraiment effective et spécifique au jeu, pour le moment on peut en effet faire des parties de 0 et 1 joueur
 			et les parties critiques du programme (distribution des cartes, choix des actions, executions des actions etc...) mériteraient une gestion
 			des exceptions
+
+Le git du jeu est à l'adresse suivante : https://github.com/GlitchedRaven/caillou-breton/
 				
