@@ -178,8 +178,9 @@ public class AdvancedGame extends Game {
 				}
 				game.setSeason(); // Change the season to the next one
 			}
-				console.displayAdvancedScore(game.playerScore);
+				
 				game.setRound(); // Change the round to the next one
+				console.displayAdvancedScore(game.playerScore);
 				
 				
 		}
