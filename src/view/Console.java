@@ -1,5 +1,6 @@
 package view;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Scanner;
 
@@ -46,7 +47,7 @@ public class Console implements GameView {
 			return false;
 	}
 	public int choiceVictim() {
-		System.out.println("Quel joueur souhaitez vous voler ?");
+		System.out.println("Quel joueur souhaitez vous attaquer ?");
 		return this.userInput.nextInt();  
 	}
 	
@@ -65,7 +66,11 @@ public class Console implements GameView {
 			System.out.println(w.getName() + " wins !");
 	}
 	
-	
+	public void displayAdvancedScore(HashMap<Player, Integer> score) {
+		for(Player p : score.keySet()) {
+			System.out.println("Score de " + p.getName() + " " +  score.get(p));
+		}
+	}
 	public Console(){
 		super();
 		this.userInput = new Scanner(System.in);

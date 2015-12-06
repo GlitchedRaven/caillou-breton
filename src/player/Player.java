@@ -73,7 +73,8 @@ public abstract class Player {
 	public void playGiantMole(Ally card, Player victim) {
 		int season = currentGame.getSeason();
 		int[] allyStrength = card.getStrengthVector();
-			victim.setNbMenhirs(victim.getNbMenhirs() -allyStrength[season]);
+		victim.setNbMenhirs(victim.getNbMenhirs() -allyStrength[season]);
+		this.hand.remove(card);
 		
 	}
 	
@@ -81,6 +82,7 @@ public abstract class Player {
 	public void playWatchDog(Ally card) {
 		int[] allyStrength = card.getStrengthVector();
 		this.setWatchDogProtection(allyStrength);
+		this.hand.remove(card);
 		
 	}
 	
