@@ -67,6 +67,10 @@ public abstract class Game {
 		this.season++;
 	}
 	
+	public void setSeason(int season) {
+		this.season = season;
+	}
+	
 	public ArrayList<Player> getPlayers() {
 		return players;
 	}

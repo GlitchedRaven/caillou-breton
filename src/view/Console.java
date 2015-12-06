@@ -40,7 +40,7 @@ public class Console implements GameView {
 	
 	public boolean choicePlayWatchDog(Player victim) {
 		System.out.println(victim.getName() +", souhaitez vous jouer votre Chien de Garde en réponse ?  O(ui)/N(on)");
-		if(this.userInput.next() == "O")
+		if(this.userInput.next().equals("O"))
 			return true;
 		else
 			return false;
