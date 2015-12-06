@@ -71,6 +71,7 @@ public class AdvancedGame extends Game {
 			Integer oldScore = this.playerScore.get(player);
 			this.playerScore.put(player, oldScore + player.getNbMenhirs());
 		}
+		this.setSeason(SPRING);
 		this.round += 1;
 	}
 
@@ -100,6 +101,8 @@ public class AdvancedGame extends Game {
 				Player player = p.next();
 				player.setNbMenhirs(0);
 				player.setNbRocks(2);
+				int[] resetWatchDog = {0,0,0,0};
+				player.setWatchDogProtection(resetWatchDog);
 				if(player instanceof HumanPlayer){
 					boolean drawAlly = console.choiceAllyOrRock(player);
 
@@ -159,7 +162,7 @@ public class AdvancedGame extends Game {
 					
 				}
 					else if(currentPlayer instanceof AIplayer){
-						//console.getPlayerDetails(currentPlayer);
+						console.getPlayerDetails(currentPlayer);
 						((AIplayer) currentPlayer).playACard();
 						//console.getPlayerDetails(currentPlayer);
 						}

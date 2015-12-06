@@ -2,7 +2,7 @@ package player;
 
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 import game.*;
 import card.*;
@@ -21,7 +21,7 @@ public abstract class Player {
 		toSteal -= protection;
 		if(toSteal < 0)
 			toSteal = 0;
-		if( toSteal<= this.nbRocks) {
+		if( toSteal <= this.nbRocks) {
 			this.nbRocks -= toSteal;
 		return toSteal; 
 		}
@@ -61,7 +61,10 @@ public abstract class Player {
 		
 		int rockStolen = victim.stealRocks(farfadetStrength[season], victim.getWatchDogProtection()[season]);
 		
-		this.nbRocks += rockStolen;
+		if(rockStolen > 0) 
+			this.nbRocks += rockStolen;
+		
+		
 		this.hand.remove(card);
 		
 	
@@ -135,7 +138,8 @@ public abstract class Player {
 
 	@Override
 	public String toString() {
-		return "Graine(s)=" + nbRocks + "\n"+ "Menhir(s)=" + nbMenhirs + "\n\n" + " Main=" + hand.toString() +"\n";
+		return "Graine(s)=" + nbRocks + "\n"+ "Menhir(s)=" + nbMenhirs + "\n" + "Chien de Garde = " 
+					 + Arrays.toString(watchDogProtection) + "\n\n" + " Main=" + hand.toString() +"\n";
 	}
 	public Game getCurrentGame() {
 		return currentGame;
