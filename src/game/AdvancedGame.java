@@ -92,17 +92,27 @@ public class AdvancedGame extends Game {
 		Console console = new Console();
 		
 		while(game.round <= game.getPlayers().size()) {
+			
+			
+			
+			// Player initialization at each round
+			for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
+				
+					Player player = p.next();
+					player.getHand().clear();
+					player.setNbMenhirs(0);
+					player.setNbRocks(2);
+					int[] resetWatchDog = {0,0,0,0};
+					player.setWatchDogProtection(resetWatchDog);
+			}
+			//END player init
 			//Card distribution
+			game.allyDeck = new Deck(Deck.ALLY);
 			Deck ingredientDeck = new Deck(Deck.INGREDIENT);
 			ingredientDeck.distribute(4, game.getPlayers());
 			
 			for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
-				
 				Player player = p.next();
-				player.setNbMenhirs(0);
-				player.setNbRocks(2);
-				int[] resetWatchDog = {0,0,0,0};
-				player.setWatchDogProtection(resetWatchDog);
 				if(player instanceof HumanPlayer){
 					boolean drawAlly = console.choiceAllyOrRock(player);
 
@@ -137,8 +147,7 @@ public class AdvancedGame extends Game {
 									if(((Ally) victimLastCard).getAllyType() == Ally.WATCHDOG)
 										if(console.choicePlayWatchDog(victim)) {
 											victim.playWatchDog((Ally) victimLastCard);
-											game.getAllyDeck().push(victimLastCard);
-											victim.getHand().remove(victimLastCard);
+											
 										}
 									}	
 									currentPlayer.playFarfadet((Ingredient) playedCard, victim);
@@ -169,8 +178,9 @@ public class AdvancedGame extends Game {
 				}
 				game.setSeason(); // Change the season to the next one
 			}
-			
+				console.displayAdvancedScore(game.playerScore);
 				game.setRound(); // Change the round to the next one
+				
 				
 		}
 		console.displayWinner(game.designateWinner());

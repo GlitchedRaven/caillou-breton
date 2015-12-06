@@ -74,8 +74,8 @@ public class Deck extends LinkedList<Card> {
 	public final static int[] CHIEN_DE_GARDE2 = {1,2,0,1};
 	public final static int[] CHIEN_DE_GARDE3 = {0,1,3,0};
 	
-	public final static int[][] ALLY_CARDS = {TAUPE_GEANTE1, TAUPE_GEANTE1, TAUPE_GEANTE1,
-												CHIEN_DE_GARDE1, CHIEN_DE_GARDE1, CHIEN_DE_GARDE1};
+	public final static int[][] ALLY_CARDS = {TAUPE_GEANTE1, TAUPE_GEANTE2, TAUPE_GEANTE3,
+												CHIEN_DE_GARDE1, CHIEN_DE_GARDE2, CHIEN_DE_GARDE3};
 	public final static String[] ALLY_NAMES = {"Taupe Géante", "Chien de Garde"};
 	public final static int NUMBER_ALLY = ALLY_CARDS.length;
 	
