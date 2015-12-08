@@ -1,5 +1,6 @@
 package view;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Scanner;
 
@@ -40,19 +41,19 @@ public class Console implements GameView {
 	
 	public boolean choicePlayWatchDog(Player victim) {
 		System.out.println(victim.getName() +", souhaitez vous jouer votre Chien de Garde en réponse ?  O(ui)/N(on)");
-		if(this.userInput.next() == "O")
+		if(this.userInput.next().equals("O"))
 			return true;
 		else
 			return false;
 	}
 	public int choiceVictim() {
-		System.out.println("Quel joueur souhaitez vous voler ?");
+		System.out.println("Quel joueur souhaitez vous attaquer ?");
 		return this.userInput.nextInt();  
 	}
 	
 	public boolean choiceAllyOrRock(Player player){
 		System.out.println(player.getName() + ", souhaitez vous piocher un Allié ? O(ui)/N(on) (Vous commencerez la partie sans"
-							+ "graines !");
+							+ " graines !");
 		if(this.userInput.next().equals("O"))
 			return true;
 		else
@@ -65,7 +66,11 @@ public class Console implements GameView {
 			System.out.println(w.getName() + " wins !");
 	}
 	
-	
+	public void displayAdvancedScore(HashMap<Player, Integer> score) {
+		for(Player p : score.keySet()) {
+			System.out.println("Score de " + p.getName() + " " +  score.get(p));
+		}
+	}
 	public Console(){
 		super();
 		this.userInput = new Scanner(System.in);

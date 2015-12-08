@@ -2,7 +2,7 @@ package player;
 
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 import game.*;
 import card.*;
@@ -13,11 +13,14 @@ public abstract class Player {
 	private String name;
 	private int nbRocks;
 	private int nbMenhirs;
-	private int[] watchDogProtection;
+	private int[] watchDogProtection = {0, 0, 0, 0};
 	private ArrayList<Card> hand;
 	private Game currentGame;
 	
-	private int stealRocks(int toSteal) {
+	private int stealRocks(int toSteal, int protection) {
+		toSteal -= protection;
+		if(toSteal < 0)
+			toSteal = 0;
 		if( toSteal <= this.nbRocks) {
 			this.nbRocks -= toSteal;
 		return toSteal; 
@@ -56,25 +59,30 @@ public abstract class Player {
 		int season = currentGame.getSeason();
 		int[] farfadetStrength = card.getFarfadetVector();
 		
-		int rockStolen = victim.stealRocks(farfadetStrength[season]);
+		int rockStolen = victim.stealRocks(farfadetStrength[season], victim.getWatchDogProtection()[season]);
 		
-		this.nbRocks += rockStolen;
+		if(rockStolen > 0) 
+			this.nbRocks += rockStolen;
+		
+		
 		this.hand.remove(card);
 		
 	
 	}
 
-	public void playGiantMole(GiantMole card, Player victim) {
+	public void playGiantMole(Ally card, Player victim) {
 		int season = currentGame.getSeason();
 		int[] allyStrength = card.getStrengthVector();
-			victim.setNbMenhirs(victim.getNbMenhirs() -allyStrength[season]);
+		victim.setNbMenhirs(victim.getNbMenhirs() -allyStrength[season]);
+		this.hand.remove(card);
 		
 	}
 	
 	
-	public void playWatchDog(WatchDog card) {
+	public void playWatchDog(Ally card) {
 		int[] allyStrength = card.getStrengthVector();
 		this.setWatchDogProtection(allyStrength);
+		this.hand.remove(card);
 		
 	}
 	
@@ -132,7 +140,8 @@ public abstract class Player {
 
 	@Override
 	public String toString() {
-		return "Graine(s)=" + nbRocks + "\n"+ "Menhir(s)=" + nbMenhirs + "\n\n" + " Main=" + hand.toString() +"\n";
+		return "Graine(s)=" + nbRocks + "\n"+ "Menhir(s)=" + nbMenhirs + "\n" + "Chien de Garde = " 
+					 + Arrays.toString(watchDogProtection) + "\n\n" + " Main=" + hand.toString() +"\n";
 	}
 	public Game getCurrentGame() {
 		return currentGame;

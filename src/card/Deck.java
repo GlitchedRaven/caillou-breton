@@ -58,7 +58,7 @@ public class Deck extends LinkedList<Card> {
 														RACINE_D_ARC_EN_CIEL2, RACINE_D_ARC_EN_CIEL3, ESPRIT_DE_DOLMEN1,
 														ESPRIT_DE_DOLMEN2, ESPRIT_DE_DOLMEN3, RIRE_DE_FEE1, RIRE_DE_FEE2, RIRE_DE_FEE3};
 	public final static String[] INGREDIENT_NAMES = {"Rayon De Lune", "Chant de Sirène", "Larme de Dryade", 
-														"Fontaine d'eau pure", "Poudre d'Or", "Racine d'arcg-en-ciel", 
+														"Fontaine d'eau pure", "Poudre d'Or", "Racine d'arc-en-ciel", 
 														"Esprit de Dolmen", "Rire de fée"};
 	public final static int NUMBER_INGREDIENTS = INGREDIENT_CARDS.length;
 	
@@ -74,8 +74,8 @@ public class Deck extends LinkedList<Card> {
 	public final static int[] CHIEN_DE_GARDE2 = {1,2,0,1};
 	public final static int[] CHIEN_DE_GARDE3 = {0,1,3,0};
 	
-	public final static int[][] ALLY_CARDS = {TAUPE_GEANTE1, TAUPE_GEANTE1, TAUPE_GEANTE1,
-												CHIEN_DE_GARDE1, CHIEN_DE_GARDE1, CHIEN_DE_GARDE1};
+	public final static int[][] ALLY_CARDS = {TAUPE_GEANTE1, TAUPE_GEANTE2, TAUPE_GEANTE3,
+												CHIEN_DE_GARDE1, CHIEN_DE_GARDE2, CHIEN_DE_GARDE3};
 	public final static String[] ALLY_NAMES = {"Taupe Géante", "Chien de Garde"};
 	public final static int NUMBER_ALLY = ALLY_CARDS.length;
 	
@@ -108,7 +108,7 @@ public class Deck extends LinkedList<Card> {
 		
 		case ALLY:
 			for(int i = 0; i < NUMBER_ALLY ; i++) {
-				this.push(new Ally(ALLY_NAMES[i/3], ALLY_CARDS[i]));
+				this.push(new Ally(ALLY_NAMES[i/3], ALLY_CARDS[i], Ally.TYPES[i/3]));
 				
 			}
 			this.shuffle();
