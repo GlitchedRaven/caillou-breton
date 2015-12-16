@@ -131,7 +131,7 @@ public class GraphicalView implements GameView, Observer {
 
 	@Override
 	public String choiceAction() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

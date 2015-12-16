@@ -33,9 +33,9 @@ public abstract class Game {
 					System.out.println("Quelle difficulté pour le joueur AI "+ name + "? (facile/moyen)");
 					String difficulté = user_input.next();
 					
-					if (difficulté == "facile"){
+					if (difficulté.equals("facile")){
 						players.add(new AIplayer(name, this, new FirstCard()));
-					} else if (difficulté == "moyen"){
+					} else if (difficulté.equals("moyen")){
 						players.add(new AIplayer(name, this, new Grow()));
 					} else {
 						players.add(new AIplayer(name, this, new FirstCard()));
