@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Ingredient extends Card {
 	
+	public static final String[] INGREDIENT_ACTION = {"Geant", "Engrais","Farfadet"};
+	
 	private int[] giantVector;
 	private int[] farfadetVector;
 	private int[] fertilizerVector;

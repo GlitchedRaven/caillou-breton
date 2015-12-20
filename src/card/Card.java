@@ -1,6 +1,8 @@
 package card;
 
-public abstract class Card {
+import java.util.Observable;
+
+public abstract class Card extends Observable {
 	private String name;
 	
 	

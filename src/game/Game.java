@@ -2,10 +2,11 @@ package game;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Observable;
 import player.*;
 
 
-public abstract class Game {
+public abstract class Game extends Observable{
 	
 	public final static int SPRING = 0;
 	public final static int SUMMER = 1;

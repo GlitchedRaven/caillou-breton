@@ -3,12 +3,13 @@ package player;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Observable;
 
 import game.*;
 import card.*;
 
 
-public abstract class Player {
+public abstract class Player extends Observable{
 	
 	private String name;
 	private int nbRocks;
@@ -85,7 +86,6 @@ public abstract class Player {
 		this.hand.remove(card);
 		
 	}
-	
 	
 
 	public Player(String name, Game game) {

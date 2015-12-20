@@ -2,39 +2,57 @@ package controller;
 import card.Ingredient;
 import game.Game;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 import card.*;
 import view.*;
 import player.*;
 
 public class GameController {
-	private GameView view;
+	private GraphicalView gv;
 	private Game game;
 	
 	
-	public GameController(GameView view, Game game) {
+	public GameController(Game game) {
 		super();
-		this.view = view;
+		this.gv = new GraphicalView(game);
 		this.game = game;
 	}
 
-
-	public void doAction(String playedAction, int playedCard, Player currentPlayer) {
+	public String choiceIngredientAction(Player player, Ingredient card) {
+		JFrame choiceWindow = new JFrame("Choisissez votre action");
+		choiceWindow.getContentPane().setLayout(new BoxLayout(choiceWindow.getContentPane(), BoxLayout.X_AXIS));
 		
-		if(playedAction.equals("G"))
-			currentPlayer.playGiant((Ingredient) currentPlayer.getHand().get(playedCard));
-		else if(playedAction.equals("E"))
-			currentPlayer.playFertilizer((Ingredient) currentPlayer.getHand().get(playedCard));
-		else if(playedAction.equals("F")) {
-			int victim = view.choiceVictim();
-			currentPlayer.playFarfadet((Ingredient) currentPlayer.getHand().get(playedCard), game.getPlayers().get(victim - 1));
-		}
-		else
-			System.out.println("Tour passé");
-	
-		currentPlayer.getHand().remove(playedCard); //On retire la carte jouée
+			JButton b1 = new JButton(Ingredient.INGREDIENT_ACTION[0]);
+			b1.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) { player.playGiant(card);}
+			});
+			
+			JButton b2 = new JButton(Ingredient.INGREDIENT_ACTION[1]);
+			b2.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) { player.playFertilizer(card);}
+			});
+			
+			JButton b3 = new JButton(Ingredient.INGREDIENT_ACTION[2]);
+			b2.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) { 
+				player.playFarfadet(card, gv.choiceVictim());}
+			});
+			choiceWindow.add(b1);
+			choiceWindow.add(b2);
+			choiceWindow.add(b3);
+		
+		
+		
+		return null;
 	}
+
 	public void changeSeason() {
 		game.setSeason();
 	}

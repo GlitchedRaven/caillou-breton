@@ -56,19 +56,8 @@ public class QuickGame extends Game {
 				if (currentPlayer instanceof HumanPlayer) {
 					console.getGameDetails(game);
 					console.getPlayerDetails(currentPlayer);
-					int playedCard = console.choiceCard();
-					String playedAction = console.choiceAction();
 					
-					if(playedAction.equals("G"))
-						currentPlayer.playGiant((Ingredient) currentPlayer.getHand().get(playedCard));
-					else if(playedAction.equals("E"))
-						currentPlayer.playFertilizer((Ingredient) currentPlayer.getHand().get(playedCard));
-					else if(playedAction.equals("F")) {
-						int victim = console.choiceVictim();
-						currentPlayer.playFarfadet((Ingredient) currentPlayer.getHand().get(playedCard), game.getPlayers().get(victim - 1));
-				}
-					else
-						System.out.println("Tour passé");
+					
 					
 				} else if(currentPlayer instanceof AIplayer){
 					//console.getPlayerDetails(currentPlayer);

@@ -7,7 +7,7 @@ import java.util.Scanner;
 import game.Game;
 import player.*;
 
-public class Console implements GameView {
+public class Console implements Viewable {
 	
 	private Scanner userInput;
 	

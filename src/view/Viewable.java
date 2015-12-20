@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import game.Game;
 import player.Player;
 
-public interface GameView {
+public interface Viewable {
 	public abstract void getPlayerDetails(Player player);
 	public abstract void getGameDetails(Game game);
 	public abstract int choiceCard();
