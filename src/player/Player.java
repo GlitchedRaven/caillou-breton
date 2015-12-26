@@ -45,6 +45,8 @@ public abstract class Player extends Observable{
 			this.nbRocks -= fertilizerStrength[season];
 		}
 		this.hand.remove(card);
+		this.setChanged();
+		this.notifyObservers((Card) card);
 	}
 	
 	public void playGiant(Ingredient card) {
@@ -53,6 +55,9 @@ public abstract class Player extends Observable{
 		
 		this.nbRocks += giantStrength[season];
 		this.hand.remove(card);
+		
+		this.setChanged();
+		this.notifyObservers((Card) card);
 		
 	}
 
@@ -67,6 +72,8 @@ public abstract class Player extends Observable{
 		
 		
 		this.hand.remove(card);
+		this.setChanged();
+		this.notifyObservers((Card) card);
 		
 	
 	}
@@ -76,6 +83,8 @@ public abstract class Player extends Observable{
 		int[] allyStrength = card.getStrengthVector();
 		victim.setNbMenhirs(victim.getNbMenhirs() -allyStrength[season]);
 		this.hand.remove(card);
+		this.setChanged();
+		this.notifyObservers((Card) card);
 		
 	}
 	
@@ -84,6 +93,8 @@ public abstract class Player extends Observable{
 		int[] allyStrength = card.getStrengthVector();
 		this.setWatchDogProtection(allyStrength);
 		this.hand.remove(card);
+		this.setChanged();
+		this.notifyObservers((Card) card);
 		
 	}
 	
@@ -106,6 +117,9 @@ public abstract class Player extends Observable{
 			this.nbRocks = nbRocks;
 		else
 			this.nbRocks = 0;
+		
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 	public int getNbMenhirs() {
@@ -116,6 +130,9 @@ public abstract class Player extends Observable{
 			this.nbMenhirs = nbMenhirs;
 		else
 			this.nbMenhirs = 0;
+		
+		this.setChanged();
+		this.notifyObservers();
 
 	}
 	public int[] getWatchDogProtection() {
@@ -123,6 +140,8 @@ public abstract class Player extends Observable{
 	}
 	public void setWatchDogProtection(int[] watchDogProtection) {
 		this.watchDogProtection = watchDogProtection;
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 		
@@ -136,6 +155,8 @@ public abstract class Player extends Observable{
 
 	public void setHand(Card card) {
 		this.hand.add(card);
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 	@Override

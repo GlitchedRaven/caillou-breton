@@ -18,11 +18,13 @@ public abstract class Game extends Observable{
 	
 	private Scanner user_input = new Scanner( System.in );
 	protected ArrayList<Player> players;
+	protected int currentPlayerIndex;
 	
 	
 	public Game() {
 		super();
 		this.season = SPRING;
+		this.currentPlayerIndex = 0;
 		
 		//Instantiate the players
 				System.out.println("Combien de joueurs AI?");
@@ -64,17 +66,29 @@ public abstract class Game extends Observable{
 	}
 
 
-	public void setSeason() {
-		this.season++;
-	}
-	
+
 	public void setSeason(int season) {
 		this.season = season;
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
+	public int getCurrentPlayerIndex() {
+		return currentPlayerIndex;
+	}
+
+
 	public ArrayList<Player> getPlayers() {
 		return players;
 	}
+	
+	public Player getCurrentPlayer() {
+		return players.get(currentPlayerIndex);
+	}
 
-
+	public void setCurrentPlayer(int index) {
+		this.currentPlayerIndex = index;
+		this.setChanged();
+		this.notifyObservers(players.get(currentPlayerIndex));
+	}
 }

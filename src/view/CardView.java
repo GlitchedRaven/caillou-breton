@@ -1,11 +1,15 @@
 package view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import card.*;
+import player.Player;
 
 public class CardView extends JButton implements Observer {
 
@@ -21,6 +25,8 @@ public class CardView extends JButton implements Observer {
 		super.setText(card.toString());
 		
 	}
+		
+		
 
 
 
@@ -29,5 +35,15 @@ public class CardView extends JButton implements Observer {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+
+
+	public Card getCard() {
+		return card;
+	}
+	
+	
 
 }

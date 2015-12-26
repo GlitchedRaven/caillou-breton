@@ -1,59 +1,67 @@
 package controller;
-import card.Ingredient;
+
 import game.Game;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Scanner;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.util.ArrayList;
+
+import java.util.ListIterator;
+
+import javax.swing.JOptionPane;
 
 import card.*;
 import view.*;
 import player.*;
 
-public class GameController {
-	private GraphicalView gv;
-	private Game game;
+public abstract class GameController {
+	protected GameView gv;
+	protected Game game;
 	
 	
 	public GameController(Game game) {
 		super();
-		this.gv = new GraphicalView(game);
+		this.gv = new GameView(game);
 		this.game = game;
+		
+		for(ListIterator<PlayerView> it = gv.getPlayerViews().listIterator(); it.hasNext();) {
+			PlayerView pv = it.next();
+			Player currentPlayer = pv.getPlayer();
+		}
+		
 	}
 
-	public String choiceIngredientAction(Player player, Ingredient card) {
-		JFrame choiceWindow = new JFrame("Choisissez votre action");
-		choiceWindow.getContentPane().setLayout(new BoxLayout(choiceWindow.getContentPane(), BoxLayout.X_AXIS));
-		
-			JButton b1 = new JButton(Ingredient.INGREDIENT_ACTION[0]);
-			b1.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e) { player.playGiant(card);}
-			});
-			
-			JButton b2 = new JButton(Ingredient.INGREDIENT_ACTION[1]);
-			b2.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e) { player.playFertilizer(card);}
-			});
-			
-			JButton b3 = new JButton(Ingredient.INGREDIENT_ACTION[2]);
-			b2.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e) { 
-				player.playFarfadet(card, gv.choiceVictim());}
-			});
-			choiceWindow.add(b1);
-			choiceWindow.add(b2);
-			choiceWindow.add(b3);
-		
-		
-		
-		return null;
-	}
+	
 
 	public void changeSeason() {
-		game.setSeason();
+		game.setSeason(game.getSeason()+1);
+	}
+	public void changePlayer() {
+		if(game.getCurrentPlayerIndex() < game.getPlayers().size() - 1 )
+			game.setCurrentPlayer(game.getCurrentPlayerIndex()+1);
+		else {
+			changeSeason();
+			game.setCurrentPlayer(0);
+		}
+		
+	}
+	public GameView getGv() {
+		return gv;
+	}
+	
+	public abstract String choiceAction();
+	
+	public Player choiceVictim() {
+		ArrayList<Object> options = new ArrayList<Object>();
+		for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
+			Player player = p.next();
+			options.add(player);		
+		}
+		
+		Object[] opt = new Object[options.size()];
+		options.toArray(opt);
+		
+		Player victim = (Player) JOptionPane.showInputDialog(null, "Choisissez votre victime", null, JOptionPane.QUESTION_MESSAGE
+				, null, opt, opt[0]);
+		return victim;
 	}
 }

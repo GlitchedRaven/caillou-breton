@@ -3,11 +3,13 @@ package game;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+import card.Ally;
+import card.Card;
 import card.Deck;
 import card.Ingredient;
+import controller.*;
 import player.*;
-import view.Console;
-import view.GraphicalView;
+import view.GameView;
 
 public class QuickGame extends Game {
 
@@ -45,30 +47,17 @@ public class QuickGame extends Game {
 
 
 	public static void main(String[] args) {
-		QuickGame game = new QuickGame();
-		GraphicalView console = new GraphicalView(game);
 		
-		while(game.getSeason() <= WINTER) {
+		QuickGame g = new QuickGame();
+		QuickGameController gc = new QuickGameController(g);
+		GameView gv = gc.getGv();
+		
+		while(g.getSeason() <= WINTER) {
 			
-			for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
-				Player currentPlayer = p.next();
 			
-				if (currentPlayer instanceof HumanPlayer) {
-					console.getGameDetails(game);
-					console.getPlayerDetails(currentPlayer);
-					
-					
-					
-				} else if(currentPlayer instanceof AIplayer){
-					//console.getPlayerDetails(currentPlayer);
-					((AIplayer) currentPlayer).playACard();
-					//console.getPlayerDetails(currentPlayer);
-					}
-			}
-			game.setSeason(); // Change the season to the next one
 		}
 			
-			console.displayWinner(game.designateWinner());
+			gv.displayWinner(g.designateWinner());
 			
 	}
 

@@ -176,7 +176,7 @@ public class AdvancedGame extends Game {
 						//console.getPlayerDetails(currentPlayer);
 						}
 				}
-				game.setSeason(); // Change the season to the next one
+				//game.setSeason(); // Change the season to the next one
 			}
 				
 				game.setRound(); // Change the round to the next one
