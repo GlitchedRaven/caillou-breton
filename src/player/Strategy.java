@@ -4,5 +4,5 @@ import game.Game;
 
 public interface Strategy {
 
-	public void playACard(AIplayer player, Game game);
+	public String playACard(AIplayer player, Game game);
 }

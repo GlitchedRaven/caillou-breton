@@ -25,12 +25,14 @@ public class PlayerView implements Observer {
 		
 		this.pan = new JPanel(new GridLayout(0, 1, 0, 0));
 		
-		for(ListIterator<Card> c = player.getHand().listIterator();c.hasNext();) {
-			Card card = c.next();
-			CardView cv = new CardView(card);
-			cardViews.put(card, cv);
-			this.pan.add(cv);
-			
+		if(player instanceof HumanPlayer) {
+			for(ListIterator<Card> c = player.getHand().listIterator();c.hasNext();) {
+				Card card = c.next();
+				CardView cv = new CardView(card);
+				cardViews.put(card, cv);
+				this.pan.add(cv);
+
+			}
 		}
 	}
 
@@ -62,6 +64,9 @@ public class PlayerView implements Observer {
 			cardViews.remove(arg);
 		}
 		
+		if(arg instanceof String) {
+			JOptionPane.showMessageDialog(this.pan, arg);
+		}
 		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
 								+ "\n" + " Graine(s) : " + player.getNbRocks());
 		pan.revalidate();

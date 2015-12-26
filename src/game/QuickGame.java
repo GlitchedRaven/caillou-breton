@@ -53,6 +53,7 @@ public class QuickGame extends Game {
 		GameView gv = gc.getGv();
 		
 		
+		
 	}
 }
 

@@ -9,14 +9,14 @@ import game.*;
 import card.*;
 
 
-public abstract class Player extends Observable{
+public abstract class Player extends Observable {
 	
-	private String name;
-	private int nbRocks;
-	private int nbMenhirs;
-	private int[] watchDogProtection = {0, 0, 0, 0};
-	private ArrayList<Card> hand;
-	private Game currentGame;
+	protected String name;
+	protected int nbRocks;
+	protected int nbMenhirs;
+	protected int[] watchDogProtection = {0, 0, 0, 0};
+	protected ArrayList<Card> hand;
+	protected Game currentGame;
 	
 	private int stealRocks(int toSteal, int protection) {
 		toSteal -= protection;
@@ -32,7 +32,7 @@ public abstract class Player extends Observable{
 			return (-tmp + toSteal);
 		}
 	}
-	public void playFertilizer(Ingredient card) {
+	public String playFertilizer(Ingredient card) {
 		int season = currentGame.getSeason();
 		int[] fertilizerStrength = card.getFertilizerVector();
 		
@@ -47,9 +47,12 @@ public abstract class Player extends Observable{
 		this.hand.remove(card);
 		this.setChanged();
 		this.notifyObservers((Card) card);
+		
+		return this.getName() + " a joue " + card.getName() 
+		+ " avec le pouvoir Engrais pour une force de " + fertilizerStrength[season]; 
 	}
 	
-	public void playGiant(Ingredient card) {
+	public String playGiant(Ingredient card) {
 		int season = currentGame.getSeason();
 		int[] giantStrength = card.getGiantVector();
 		
@@ -59,9 +62,12 @@ public abstract class Player extends Observable{
 		this.setChanged();
 		this.notifyObservers((Card) card);
 		
+		return this.getName() + " a joue " + card.getName() 
+		+ " avec le pouvoir Geant pour une force de " + giantStrength[season]; 
+		
 	}
 
-	public void playFarfadet(Ingredient card, Player victim) {
+	public String playFarfadet(Ingredient card, Player victim) {
 		int season = currentGame.getSeason();
 		int[] farfadetStrength = card.getFarfadetVector();
 		
@@ -74,6 +80,9 @@ public abstract class Player extends Observable{
 		this.hand.remove(card);
 		this.setChanged();
 		this.notifyObservers((Card) card);
+		
+		return this.getName() + " a joue " + card.getName() 
+		+ " avec le pouvoir Geant pour une force de " + farfadetStrength[season]; 
 		
 	
 	}

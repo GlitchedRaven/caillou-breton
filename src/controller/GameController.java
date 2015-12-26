@@ -22,26 +22,10 @@ public abstract class GameController {
 		super();
 		this.gv = new GameView(game);
 		this.game = game;
-		
-		for(ListIterator<PlayerView> it = gv.getPlayerViews().listIterator(); it.hasNext();) {
-			PlayerView pv = it.next();
-			Player currentPlayer = pv.getPlayer();
-		}
-		
 	}
 
 	
-
 	
-	public void changePlayer() {
-		if(game.getCurrentPlayerIndex() < game.getPlayers().size() - 1 )
-			game.setCurrentPlayer(game.getCurrentPlayerIndex()+1);
-		else {
-			changeSeason();
-			game.setCurrentPlayer(0);
-		}
-		
-	}
 	public GameView getGv() {
 		return gv;
 	}

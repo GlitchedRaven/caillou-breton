@@ -1,6 +1,7 @@
 package player;
 
 import player.AIplayer;
+import card.Card;
 import card.Ingredient;
 import game.Game;
 
@@ -13,8 +14,10 @@ public class FirstCard implements Strategy {
 	}
 
 	@Override
-	public void playACard(AIplayer player, Game game) {
-		player.playGiant((Ingredient) player.getHand().get(0));
+	public String playACard(AIplayer player, Game game) {
+		Card playedCard = player.getHand().get(0);
+		return player.playGiant((Ingredient) playedCard);
+		
 		
 
 	}

@@ -17,7 +17,7 @@ public class Grow implements Strategy {
 	}
 
 	@Override
-	public void playACard(AIplayer player, Game game) {
+	public String playACard(AIplayer player, Game game) {
 		Ingredient cardToPlay = (Ingredient) player.getHand().get(0);
 		if (game.getSeason()<2){
 			for(ListIterator<Card> c = player.getHand().listIterator(); c.hasNext();) {
@@ -26,7 +26,7 @@ public class Grow implements Strategy {
 					cardToPlay = (Ingredient) currentCard;
 				}
 			}
-			player.playGiant(cardToPlay);
+			return player.playGiant(cardToPlay);
 			
 		} else {
 			for(ListIterator<Card> c = player.getHand().listIterator(); c.hasNext();) {
@@ -35,7 +35,7 @@ public class Grow implements Strategy {
 					cardToPlay = (Ingredient) currentCard;
 				}
 			}
-			player.playFertilizer(cardToPlay);
+			return player.playFertilizer(cardToPlay);
 			
 		}
 		
