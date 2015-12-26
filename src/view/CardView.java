@@ -22,7 +22,7 @@ public class CardView extends JButton implements Observer {
 		this.card = card;
 		this.card.addObserver(this);
 		
-		super.setText(card.toString());
+		super.setText("<html>" + card.toString().replaceAll("\\n", "<br>") + "</html>");
 		
 	}
 		
