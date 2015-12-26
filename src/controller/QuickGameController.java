@@ -55,5 +55,13 @@ public class QuickGameController extends GameController {
 				
 		return choice;
 	}
+	
+	public void changeSeason() {
+		int season = game.getSeason();
+		if(season == Game.WINTER)
+			gv.displayWinner(game.designateWinner());
+		else
+			game.setSeason(season+1);
+	}
 }
 	

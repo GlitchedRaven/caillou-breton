@@ -14,7 +14,7 @@ public class GameView implements  Observer {
 
 	private Game g;
 	private JFrame window;
-
+	private JLabel seasonLabel;
 	private JPanel playerDetailsPanel;
 	private JPanel currentPlayerPanel;
 	
@@ -40,6 +40,8 @@ public class GameView implements  Observer {
 		this.playerDetailsPanel = new JPanel();
 		splitPane.setLeftComponent(playerDetailsPanel);
 		this.playerDetailsPanel.setLayout(new GridLayout(0, 1, 0, 0));
+		this.seasonLabel = new JLabel("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
+		this.playerDetailsPanel.add(seasonLabel);
 		
 		this.currentPlayerPanel = new JPanel();
 		splitPane.setRightComponent(this.currentPlayerPanel);
@@ -71,7 +73,19 @@ public class GameView implements  Observer {
 		if(arg instanceof Player) {
 			getPlayerDetails((Player) arg);
 		}
-
+		
+		this.seasonLabel.setText("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
+		playerDetailsPanel.repaint();
+		playerDetailsPanel.revalidate();
+		
+		currentPlayerPanel.repaint();
+		currentPlayerPanel.revalidate();
+	}
+	
+	public void update() {
+		
+	
+		this.seasonLabel.setText("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
 		playerDetailsPanel.repaint();
 		playerDetailsPanel.revalidate();
 		
@@ -90,7 +104,10 @@ public class GameView implements  Observer {
 	}
 		
 	public void displayWinner(ArrayList<Player> winner) {
-		// TODO Auto-generated method stub
+		String winners = " " ;
+		for(Player w : winner)
+			winners += (w.getName() + " gagne ! \n");
+		JOptionPane.showMessageDialog(this.window, winners );
 
 	}
 

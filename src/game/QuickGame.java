@@ -52,14 +52,7 @@ public class QuickGame extends Game {
 		QuickGameController gc = new QuickGameController(g);
 		GameView gv = gc.getGv();
 		
-		while(g.getSeason() <= WINTER) {
-			
-			
-		}
-			
-			gv.displayWinner(g.designateWinner());
-			
+		
 	}
-
 }
 

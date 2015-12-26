@@ -32,9 +32,7 @@ public abstract class GameController {
 
 	
 
-	public void changeSeason() {
-		game.setSeason(game.getSeason()+1);
-	}
+	
 	public void changePlayer() {
 		if(game.getCurrentPlayerIndex() < game.getPlayers().size() - 1 )
 			game.setCurrentPlayer(game.getCurrentPlayerIndex()+1);
@@ -49,6 +47,7 @@ public abstract class GameController {
 	}
 	
 	public abstract String choiceAction();
+	public abstract void changeSeason();
 	
 	public Player choiceVictim() {
 		ArrayList<Object> options = new ArrayList<Object>();

@@ -20,7 +20,9 @@ public class PlayerView implements Observer {
 		this.player = player;
 		this.player.addObserver(this);
 		this.cardViews = new HashMap<Card, CardView>();
-		this.label = new JLabel(player.getName());
+		this.label = new JLabel(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
+									+ "\n" + " Graine(s) : " + player.getNbRocks());
+		
 		this.pan = new JPanel(new GridLayout(0, 1, 0, 0));
 		
 		for(ListIterator<Card> c = player.getHand().listIterator();c.hasNext();) {
@@ -59,6 +61,17 @@ public class PlayerView implements Observer {
 			this.pan.remove(cardViews.get(arg));
 			cardViews.remove(arg);
 		}
+		
+		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
+								+ "\n" + " Graine(s) : " + player.getNbRocks());
+		pan.revalidate();
+		pan.repaint();
+
+	}
+	
+	public void update() {
+		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
+								+ "\n" + " Graine(s) : " + player.getNbRocks());
 		pan.revalidate();
 		pan.repaint();
 
