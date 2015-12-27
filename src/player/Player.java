@@ -6,8 +6,9 @@ import java.util.Arrays;
 import java.util.Observable;
 
 import game.*;
+import message.TypeOfAction;
 import card.*;
-
+import message.*;
 
 public abstract class Player extends Observable {
 	
@@ -46,7 +47,7 @@ public abstract class Player extends Observable {
 		}
 		this.hand.remove(card);
 		this.setChanged();
-		this.notifyObservers((Card) card);
+		this.notifyObservers(new MenhirMessage(card, TypeOfAction.PLAY));
 		
 		return this.getName() + " a joue " + card.getName() 
 		+ " avec le pouvoir Engrais pour une force de " + fertilizerStrength[season]; 
@@ -60,7 +61,7 @@ public abstract class Player extends Observable {
 		this.hand.remove(card);
 		
 		this.setChanged();
-		this.notifyObservers((Card) card);
+		this.notifyObservers(new MenhirMessage(card, TypeOfAction.PLAY));
 		
 		return this.getName() + " a joue " + card.getName() 
 		+ " avec le pouvoir Geant pour une force de " + giantStrength[season]; 
@@ -79,7 +80,7 @@ public abstract class Player extends Observable {
 		
 		this.hand.remove(card);
 		this.setChanged();
-		this.notifyObservers((Card) card);
+		this.notifyObservers(new MenhirMessage(card, TypeOfAction.PLAY));
 		
 		return this.getName() + " a joue " + card.getName() 
 		+ " avec le pouvoir Geant pour une force de " + farfadetStrength[season]; 
@@ -87,24 +88,28 @@ public abstract class Player extends Observable {
 	
 	}
 
-	public void playGiantMole(Ally card, Player victim) {
+	public String playGiantMole(Ally card, Player victim) {
 		int season = currentGame.getSeason();
 		int[] allyStrength = card.getStrengthVector();
 		victim.setNbMenhirs(victim.getNbMenhirs() -allyStrength[season]);
 		this.hand.remove(card);
 		this.setChanged();
-		this.notifyObservers((Card) card);
+		this.notifyObservers(new MenhirMessage(card, TypeOfAction.PLAY));
+		
+	    return this.getName() + " a joue " + card.getName() 
+				+ "  pour une force de " + allyStrength[season];
 		
 	}
 	
 	
-	public void playWatchDog(Ally card) {
+	public String playWatchDog(Ally card) {
 		int[] allyStrength = card.getStrengthVector();
 		this.setWatchDogProtection(allyStrength);
 		this.hand.remove(card);
 		this.setChanged();
-		this.notifyObservers((Card) card);
+		this.notifyObservers(new MenhirMessage(card, TypeOfAction.PLAY));
 		
+		return this.getName() + " a joue " + card.getName();
 	}
 	
 
@@ -165,7 +170,7 @@ public abstract class Player extends Observable {
 	public void setHand(Card card) {
 		this.hand.add(card);
 		this.setChanged();
-		this.notifyObservers();
+		this.notifyObservers(new MenhirMessage(card, TypeOfAction.DRAW));
 	}
 
 	@Override

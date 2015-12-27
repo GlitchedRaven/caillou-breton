@@ -6,14 +6,14 @@ import game.Game;
 import java.util.ArrayList;
 
 import java.util.ListIterator;
+import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
-import card.*;
 import view.*;
 import player.*;
 
-public abstract class GameController {
+public abstract class GameController  {
 	protected GameView gv;
 	protected Game game;
 	
@@ -22,6 +22,7 @@ public abstract class GameController {
 		super();
 		this.gv = new GameView(game);
 		this.game = game;
+		
 	}
 
 	
@@ -32,6 +33,9 @@ public abstract class GameController {
 	
 	public abstract String choiceAction();
 	public abstract void changeSeason();
+	public abstract void changePlayer();
+	public abstract boolean testAIPlay();
+	
 	
 	public Player choiceVictim() {
 		ArrayList<Object> options = new ArrayList<Object>();

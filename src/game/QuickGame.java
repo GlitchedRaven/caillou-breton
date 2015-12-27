@@ -3,10 +3,9 @@ package game;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
-import card.Ally;
-import card.Card;
+
 import card.Deck;
-import card.Ingredient;
+
 import controller.*;
 import player.*;
 import view.GameView;
@@ -51,6 +50,10 @@ public class QuickGame extends Game {
 		QuickGame g = new QuickGame();
 		QuickGameController gc = new QuickGameController(g);
 		GameView gv = gc.getGv();
+		
+	
+		
+		
 		
 		
 		

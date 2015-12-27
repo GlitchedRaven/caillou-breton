@@ -91,4 +91,6 @@ public abstract class Game extends Observable{
 		this.setChanged();
 		this.notifyObservers(players.get(currentPlayerIndex));
 	}
+
+
 }

@@ -4,6 +4,8 @@ import java.awt.GridLayout;
 import java.util.*;
 import javax.swing.*;
 import card.Card;
+import message.*;
+
 import player.*;
 
 public class PlayerView implements Observer {
@@ -58,17 +60,25 @@ public class PlayerView implements Observer {
 
 
 	@Override
-	public void update(Observable o, Object arg) {
-		if(arg instanceof Card && cardViews.containsKey(arg)) {
-			this.pan.remove(cardViews.get(arg));
-			cardViews.remove(arg);
+	public synchronized void update(Observable o, Object arg) {
+		if(arg instanceof MenhirMessage){
+			Card card = ((MenhirMessage) arg).getCard();
+			TypeOfAction type = ((MenhirMessage) arg).getType();
+			
+			if(card != null && cardViews.containsKey(card) && type == TypeOfAction.PLAY) {
+				this.pan.remove(cardViews.get(card));
+				cardViews.remove(card);
+			}
 		}
+		
 		
 		if(arg instanceof String) {
 			JOptionPane.showMessageDialog(this.pan, arg);
 		}
+		
 		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
-								+ "\n" + " Graine(s) : " + player.getNbRocks());
+								+ "\n" + " Graine(s) : " + player.getNbRocks()
+								+ "\n" + "Protection : " + Arrays.toString(player.getWatchDogProtection()));
 		pan.revalidate();
 		pan.repaint();
 
@@ -77,6 +87,9 @@ public class PlayerView implements Observer {
 	public void update() {
 		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
 								+ "\n" + " Graine(s) : " + player.getNbRocks());
+		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
+		+ "\n" + " Graine(s) : " + player.getNbRocks()
+		+ "\n" + "Protection : " + Arrays.toString(player.getWatchDogProtection()));
 		pan.revalidate();
 		pan.repaint();
 
