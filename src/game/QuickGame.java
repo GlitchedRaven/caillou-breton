@@ -44,18 +44,11 @@ public class QuickGame extends Game {
 				deck.distribute(4, players);
 	}
 
-
 	public static void main(String[] args) {
 		
 		QuickGame g = new QuickGame();
 		QuickGameController gc = new QuickGameController(g);
 		GameView gv = gc.getGv();
-		
-	
-		
-		
-		
-		
 		
 	}
 }

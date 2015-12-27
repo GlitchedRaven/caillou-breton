@@ -1,5 +1,5 @@
 package message;
 
 public enum TypeOfAction {
-	PLAY, DRAW
+	PLAY, DRAW, CLEAR
 }

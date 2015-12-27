@@ -74,7 +74,7 @@ public class AdvancedGame extends Game {
 			Integer oldScore = this.playerScore.get(player);
 			this.playerScore.put(player, oldScore + player.getNbMenhirs());
 			
-			player.getHand().clear();
+			player.clearHand();
 			player.setNbMenhirs(0);
 			player.setNbRocks(2);
 			int[] resetWatchDog = {0,0,0,0};
@@ -86,6 +86,8 @@ public class AdvancedGame extends Game {
 		ingredientDeck.distribute(4, this.players);
 		this.setSeason(SPRING);
 		this.round +=1;
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 

@@ -70,7 +70,7 @@ public class GameView implements  Observer {
 	
 			
 		
-		//window.pack(); //size the frame
+		window.pack(); //size the frame
 		window.setVisible(true);
 	}
 
@@ -83,24 +83,16 @@ public class GameView implements  Observer {
 		
 		
 		this.seasonLabel.setText("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
+		if(this.g instanceof AdvancedGame) {
+			String labelText = String.valueOf(((AdvancedGame) g).getRound());
+			this.roundLabel.setText("Round :" + labelText);
+		}
 		playerDetailsPanel.repaint();
 		playerDetailsPanel.revalidate();
 		
 		currentPlayerPanel.repaint();
 		currentPlayerPanel.revalidate();
 	}
-	
-	public void update() {
-		
-	
-		this.seasonLabel.setText("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
-		playerDetailsPanel.repaint();
-		playerDetailsPanel.revalidate();
-		
-		currentPlayerPanel.repaint();
-		currentPlayerPanel.revalidate();
-	}
-
 	
 	public ArrayList<PlayerView> getPlayerViews() {
 		return playerViews;
@@ -128,8 +120,6 @@ public class GameView implements  Observer {
 		else
 			return false;
 	}
-
-
 
 	public boolean choiceAllyOrRock(Player player) {
 	

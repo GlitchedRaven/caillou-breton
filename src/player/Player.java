@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Observable;
 
 import game.*;
-import message.TypeOfAction;
 import card.*;
 import message.*;
 
@@ -157,7 +156,11 @@ public abstract class Player extends Observable {
 		this.setChanged();
 		this.notifyObservers();
 	}
-	
+	public void clearHand() {
+		this.hand.clear();
+		this.setChanged();
+		this.notifyObservers(new MenhirMessage(null, TypeOfAction.CLEAR));
+	}
 		
 	public String getName() {
 		return name;

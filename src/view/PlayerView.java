@@ -60,7 +60,7 @@ public class PlayerView implements Observer {
 
 
 	@Override
-	public synchronized void update(Observable o, Object arg) {
+	public void update(Observable o, Object arg) {
 		if(arg instanceof MenhirMessage){
 			Card card = ((MenhirMessage) arg).getCard();
 			TypeOfAction type = ((MenhirMessage) arg).getType();
@@ -75,6 +75,13 @@ public class PlayerView implements Observer {
 				CardView cv = new CardView(card);
 				cardViews.put(card, cv);
 				this.pan.add(cv);
+				
+			}
+			
+			if(type == TypeOfAction.CLEAR) {
+				for(Iterator<CardView> it = cardViews.values().iterator(); it.hasNext(); )
+					this.pan.remove(it.next());
+				cardViews.clear();
 				
 			}
 		}

@@ -90,6 +90,7 @@ public class QuickGameController extends GameController{
 	public void changePlayer() {
 		int season = game.getSeason();
 		int currentIndex = game.getCurrentPlayerIndex();
+		
 		if( currentIndex < game.getPlayers().size() - 1 ){
 			game.setCurrentPlayer(currentIndex + 1);
 			if(testAIPlay())
@@ -109,8 +110,7 @@ public class QuickGameController extends GameController{
 	public void changeSeason() {
 		int season = game.getSeason();
 		if(season == Game.WINTER);
-		else
-			game.setSeason(season+1);
+		else game.setSeason(season+1);
 	}
 
 	/*@Override
