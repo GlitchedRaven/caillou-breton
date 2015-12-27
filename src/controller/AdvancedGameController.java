@@ -167,8 +167,9 @@ public class AdvancedGameController extends GameController  {
 
 								}
 							}	
-							currentPlayer.playFarfadet((Ingredient) playedCard, victim);
+							
 						}
+						currentPlayer.playFarfadet((Ingredient) playedCard, victim);
 					}
 					changePlayer();
 

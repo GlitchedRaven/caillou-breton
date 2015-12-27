@@ -26,6 +26,7 @@ public class PlayerView implements Observer {
 									+ "\n" + " Graine(s) : " + player.getNbRocks());
 		
 		this.pan = new JPanel(new GridLayout(0, 1, 0, 0));
+		this.pan.add(new JLabel(player.getName()));
 		
 		if(player instanceof HumanPlayer) {
 			for(ListIterator<Card> c = player.getHand().listIterator();c.hasNext();) {

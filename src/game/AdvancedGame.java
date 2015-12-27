@@ -85,6 +85,7 @@ public class AdvancedGame extends Game {
 		Deck ingredientDeck = new Deck(Deck.INGREDIENT);
 		ingredientDeck.distribute(4, this.players);
 		this.setSeason(SPRING);
+		this.setCurrentPlayer(0);
 		this.round +=1;
 		this.setChanged();
 		this.notifyObservers();

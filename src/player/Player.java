@@ -24,13 +24,18 @@ public abstract class Player extends Observable {
 			toSteal = 0;
 		if( toSteal <= this.nbRocks) {
 			this.nbRocks -= toSteal;
+			this.setChanged();
+			this.notifyObservers();
 		return toSteal; 
 		}
 		else {
 			int tmp = this.nbRocks;
 			this.nbRocks = 0;
+			this.setChanged();
+			this.notifyObservers();
 			return (-tmp + toSteal);
 		}
+		
 	}
 	public String playFertilizer(Ingredient card) {
 		int season = currentGame.getSeason();

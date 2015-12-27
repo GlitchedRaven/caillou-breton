@@ -4,7 +4,7 @@ import game.Game;
 
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Observer;
 
@@ -38,17 +38,17 @@ public abstract class GameController  {
 	
 	
 	public Player choiceVictim() {
-		ArrayList<Object> options = new ArrayList<Object>();
+		HashMap<String, Player> options = new HashMap<String, Player>();
 		for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
 			Player player = p.next();
-			options.add(player);		
+			options.put(player.getName(), player);		
 		}
 		
 		Object[] opt = new Object[options.size()];
-		options.toArray(opt);
+		options.keySet().toArray(opt);
 		
-		Player victim = (Player) JOptionPane.showInputDialog(null, "Choisissez votre victime", null, JOptionPane.QUESTION_MESSAGE
+		String victimName = (String) JOptionPane.showInputDialog(null, "Choisissez votre victime", null, JOptionPane.QUESTION_MESSAGE
 				, null, opt, opt[0]);
-		return victim;
+		return options.get(victimName);
 	}
 }
