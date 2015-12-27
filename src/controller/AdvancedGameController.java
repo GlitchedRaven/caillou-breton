@@ -68,7 +68,7 @@ public class AdvancedGameController extends GameController  {
 									currentPlayer.playFarfadet((Ingredient) playedCard, victim);
 								}
 							}
-							//changePlayer();
+							changePlayer();
 
 
 						}
@@ -85,8 +85,9 @@ public class AdvancedGameController extends GameController  {
 							}
 							else if(((Ally) playedCard).getAllyType() == Ally.WATCHDOG)
 								currentPlayer.playWatchDog((Ally) playedCard);
-							
+							changePlayer();
 						}
+						
 					});
 				}
 			}

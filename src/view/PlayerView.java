@@ -68,6 +68,14 @@ public class PlayerView implements Observer {
 			if(card != null && cardViews.containsKey(card) && type == TypeOfAction.PLAY) {
 				this.pan.remove(cardViews.get(card));
 				cardViews.remove(card);
+			
+			}
+			
+			if(card != null && type == TypeOfAction.DRAW) {
+				CardView cv = new CardView(card);
+				cardViews.put(card, cv);
+				this.pan.add(cv);
+				
 			}
 		}
 		
@@ -84,15 +92,5 @@ public class PlayerView implements Observer {
 
 	}
 	
-	public void update() {
-		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
-								+ "\n" + " Graine(s) : " + player.getNbRocks());
-		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
-		+ "\n" + " Graine(s) : " + player.getNbRocks()
-		+ "\n" + "Protection : " + Arrays.toString(player.getWatchDogProtection()));
-		pan.revalidate();
-		pan.repaint();
-
-	}
 
 }
