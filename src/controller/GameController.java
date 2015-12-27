@@ -41,7 +41,7 @@ public abstract class GameController  {
 		ArrayList<Object> options = new ArrayList<Object>();
 		for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
 			Player player = p.next();
-			options.add(player);		
+			options.add(player.getName() + "=> graines :" + player.getNbRocks() + " menhirs :" + player.getNbMenhirs());		
 		}
 		
 		Object[] opt = new Object[options.size()];

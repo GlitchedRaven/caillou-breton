@@ -56,7 +56,22 @@ public abstract class Game extends Observable{
 				// Instantiate the players END
 		
 	}
-
+	
+	public Game(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames){
+		//constructor where he doesn't ask stupid questions
+		this.season = SPRING;
+		this.currentPlayerIndex = 0;
+		for (int i = 0; i < numberAIPlayers ; i++){
+			if (aIDifficulties[i].equals("facile")){
+				players.add(new AIplayer(aINames[i], this, new FirstCard()));
+			} else {
+				players.add(new AIplayer(aINames[i], this, new Grow()));
+			}
+		}
+		for (int i =0; i < numberHumanPlayers; i++){
+			players.add(new HumanPlayer(humanNames[i], this));
+		}
+	}
 
 	public abstract ArrayList<Player> designateWinner(); 
 	
