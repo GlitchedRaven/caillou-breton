@@ -61,6 +61,7 @@ public abstract class Game extends Observable{
 		//constructor where he doesn't ask stupid questions
 		this.season = SPRING;
 		this.currentPlayerIndex = 0;
+		this.players = new ArrayList<Player>();
 		for (int i = 0; i < numberAIPlayers ; i++){
 			if (aIDifficulties[i].equals("facile")){
 				players.add(new AIplayer(aINames[i], this, new FirstCard()));
