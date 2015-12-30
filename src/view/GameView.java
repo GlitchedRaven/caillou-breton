@@ -9,6 +9,7 @@ import player.Player;
 import java.awt.GridLayout;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
 
 public class GameView implements  Observer {
 
@@ -70,9 +71,9 @@ public class GameView implements  Observer {
 		//END population
 		
 	
-			
-		
+		window.setPreferredSize(new Dimension(650,400));//defining the wanted size	
 		window.pack(); //size the frame
+		window.setLocationRelativeTo(null);//centers the frame
 		window.setVisible(true);
 	}
 

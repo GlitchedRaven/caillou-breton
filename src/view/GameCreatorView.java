@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -52,6 +53,9 @@ public class GameCreatorView {
 		//this.console = new Console();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		window.setPreferredSize(new Dimension(500,400));
+		window.pack();
+		
 		
 		JButton btnPartieRapide = new JButton("Partie rapide");
 		btnPartieRapide.setHorizontalAlignment(SwingConstants.LEFT);
@@ -80,7 +84,9 @@ public class GameCreatorView {
 			}
 			
 		});
-		
+		window.setPreferredSize(new Dimension(400,100));
+		window.pack();
+		window.setLocationRelativeTo(null);
 		window.setVisible(true);
 		
 	}
