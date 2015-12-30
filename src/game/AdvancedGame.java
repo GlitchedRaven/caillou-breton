@@ -51,6 +51,20 @@ public class AdvancedGame extends Game {
 		
 	}
 
+	public AdvancedGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
+		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);
+		this.round = 1;
+		this.playerScore = new HashMap<Player, Integer>();
+		for(Iterator<Player> p = this.players.iterator(); p.hasNext();){
+			this.playerScore.put(p.next(), 0);
+		}
+		this.allyDeck = new Deck(Deck.ALLY);
+		Deck ingredientDeck = new Deck(Deck.INGREDIENT);
+		ingredientDeck.distribute(4, this.getPlayers());
+		//this.ingredientDeck = new Deck(Deck.INGREDIENT);
+		
+		
+	}
 	
 	
 
@@ -102,9 +116,9 @@ public class AdvancedGame extends Game {
 
 	
 	
-	public static void main(String[] args) {
-		AdvancedGame game = new AdvancedGame();
-		AdvancedGameController gc = new AdvancedGameController(game);
+	public static void main(String[] args, AdvancedGame g) {
+		//AdvancedGame game = new AdvancedGame();
+		AdvancedGameController gc = new AdvancedGameController(g);
 		
 		
 	

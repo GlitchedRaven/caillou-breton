@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -21,7 +22,7 @@ public class CardView extends JButton implements Observer {
 		super();
 		this.card = card;
 		this.card.addObserver(this);
-		
+
 		super.setText("<html>" + card.toString().replaceAll("\\n", "<br>") + "</html>");
 		
 	}

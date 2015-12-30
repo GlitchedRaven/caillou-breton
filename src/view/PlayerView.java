@@ -22,7 +22,7 @@ public class PlayerView implements Observer {
 		this.player = player;
 		this.player.addObserver(this);
 		this.cardViews = new HashMap<Card, CardView>();
-		this.label = new JLabel(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
+		this.label = new JLabel(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
 									+ "\n" + " Graine(s) : " + player.getNbRocks());
 		
 		this.pan = new JPanel(new GridLayout(0, 1, 0, 0));

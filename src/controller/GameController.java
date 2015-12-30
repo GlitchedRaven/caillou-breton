@@ -41,7 +41,8 @@ public abstract class GameController  {
 		HashMap<String, Player> options = new HashMap<String, Player>();
 		for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
 			Player player = p.next();
-			options.put(player.getName(), player);		
+			options.put(player.getName() + "=> graines :" + player.getNbRocks() + " menhirs :" + player.getNbMenhirs(), player);			
+
 		}
 		
 		Object[] opt = new Object[options.size()];

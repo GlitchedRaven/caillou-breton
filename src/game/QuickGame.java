@@ -8,7 +8,7 @@ import card.Deck;
 
 import controller.*;
 import player.*;
-import view.GameView;
+import view.*;
 
 public class QuickGame extends Game {
 
@@ -43,12 +43,21 @@ public class QuickGame extends Game {
 				Deck deck = new Deck(Deck.INGREDIENT);
 				deck.distribute(4, players);
 	}
+	
+	public QuickGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
+		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);
+		// Distribute cards
+				Deck deck = new Deck(Deck.INGREDIENT);
+				deck.distribute(4, players);
+	}
 
-	public static void main(String[] args) {
+
+	public static void main(String[] args, QuickGame g) {
 		
-		QuickGame g = new QuickGame();
+		//QuickGame g = new QuickGame();
 		QuickGameController gc = new QuickGameController(g);
 		GameView gv = gc.getGv();
+
 		
 	}
 }

@@ -62,8 +62,9 @@ public class GameView implements  Observer {
 			
 			playerViews.add(pv);
 			playerDetailsPanel.add(pv.getLabel());
-			currentPlayerPanel.add(pv.getPan(), player.getName() );
-			
+
+			currentPlayerPanel.add(pv.getPan(), player.getName());
+
 		}
 			
 		//END population
