@@ -12,6 +12,10 @@ import player.Player;
 import view.Console;
 
 public class AdvancedGame extends Game {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6824291523929158763L;
 	private HashMap<Player, Integer> playerScore;
 	private int round;
 	private Deck allyDeck;

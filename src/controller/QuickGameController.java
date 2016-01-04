@@ -9,6 +9,7 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
+import card.Ally;
 import card.Card;
 import card.Ingredient;
 import game.*;
@@ -21,6 +22,10 @@ import view.PlayerView;
 
 public class QuickGameController extends GameController{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6062185343347380125L;
 	public QuickGameController(QuickGame game) {
 		super(game);
 		
@@ -111,6 +116,30 @@ public class QuickGameController extends GameController{
 		int season = game.getSeason();
 		if(season == Game.WINTER);
 		else game.setSeason(season+1);
+	}
+	
+	public void addCardListener(Card playedCard, CardView cv, Player currentPlayer) {
+		if(playedCard instanceof Ingredient) {
+			cv.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					String playedAction = choiceAction();
+
+					if(playedAction.equals("Geant"))
+						currentPlayer.playGiant((Ingredient) playedCard);
+					else if(playedAction.equals("Engrais"))
+						currentPlayer.playFertilizer((Ingredient) playedCard);
+					else if(playedAction.equals("Farfadet")) {
+						Player victim = choiceVictim();
+						currentPlayer.playFarfadet((Ingredient) playedCard, victim);
+					}
+					changePlayer();
+
+
+				}
+			});
+		}
 	}
 
 	/*@Override

@@ -7,11 +7,18 @@ import javax.swing.*;
 import game.*;
 import player.Player;
 import java.awt.GridLayout;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 
-public class GameView implements  Observer {
+public class GameView implements  Observer, Serializable {
 
 	private Game g;
 	private JFrame window;
@@ -21,6 +28,7 @@ public class GameView implements  Observer {
 	private JPanel currentPlayerPanel;
 	
 	private ArrayList<PlayerView> playerViews;
+	private JButton saveButton;
 	
 	
 	
@@ -42,14 +50,17 @@ public class GameView implements  Observer {
 		this.playerDetailsPanel = new JPanel();
 		splitPane.setLeftComponent(playerDetailsPanel);
 		this.playerDetailsPanel.setLayout(new GridLayout(0, 1, 0, 0));
-		this.seasonLabel = new JLabel("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
+		this.playerDetailsPanel.setPreferredSize(new Dimension(350,400)); //defining the size of the left panel
 		
 		if(this.g instanceof AdvancedGame) {
 			String labelText = String.valueOf(((AdvancedGame) g).getRound());
 			this.roundLabel = new JLabel("Round :" + labelText);
 			this.playerDetailsPanel.add(roundLabel);
 		}
+		this.seasonLabel = new JLabel("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
 		this.playerDetailsPanel.add(seasonLabel);
+		
+		
 		
 		this.currentPlayerPanel = new JPanel();
 		splitPane.setRightComponent(this.currentPlayerPanel);
@@ -68,13 +79,23 @@ public class GameView implements  Observer {
 
 		}
 			
+		
 		//END population
 		
+		this.saveButton = new JButton("Sauvegarder");
+		//this.saveButton.setPreferredSize(new Dimension(200, 200));
+		playerDetailsPanel.add(saveButton);
 	
-		window.setPreferredSize(new Dimension(650,400));//defining the wanted size	
+		
+		
+		window.setPreferredSize(new Dimension(700,500));//defining the wanted size	
 		window.pack(); //size the frame
-		window.setLocationRelativeTo(null);//centers the frame
+		window.setLocationRelativeTo(null);//center the frame
 		window.setVisible(true);
+	}
+
+	public JButton getSaveButton() {
+		return saveButton;
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package view;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -12,8 +13,12 @@ import javax.swing.JOptionPane;
 import card.*;
 import player.Player;
 
-public class CardView extends JButton implements Observer {
+public class CardView extends JButton implements Observer,Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4329842747632825446L;
 	private Card card;
 	
 	

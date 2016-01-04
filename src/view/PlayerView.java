@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.GridLayout;
+import java.io.Serializable;
 import java.util.*;
 import javax.swing.*;
 import card.Card;
@@ -8,7 +9,11 @@ import message.*;
 
 import player.*;
 
-public class PlayerView implements Observer {
+public class PlayerView implements Observer,Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7976156237529786524L;
 	private Player player;
 	private HashMap<Card, CardView> cardViews;
 	

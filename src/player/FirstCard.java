@@ -1,14 +1,19 @@
 package player;
 
 import player.AIplayer;
+
+import java.io.Serializable;
+
 import card.Card;
 import card.Ingredient;
 import game.Game;
 
-public class FirstCard implements Strategy {
-	
-	
-	
+public class FirstCard implements Strategy,Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6461900873620043023L;
+
 	public FirstCard(){
 		
 	}

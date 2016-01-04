@@ -1,6 +1,7 @@
 package player;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Observable;
@@ -9,7 +10,13 @@ import game.*;
 import card.*;
 import message.*;
 
-public abstract class Player extends Observable {
+public abstract class Player extends Observable implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3445424604179030302L;
+	
 	
 	protected String name;
 	protected int nbRocks;

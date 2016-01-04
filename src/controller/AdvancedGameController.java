@@ -21,6 +21,11 @@ import view.PlayerView;
 
 public class AdvancedGameController extends GameController  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3857446566992287214L;
+
 	public AdvancedGameController(AdvancedGame game) {
 		super(game);
 		//Card distribution
@@ -144,7 +149,7 @@ public class AdvancedGameController extends GameController  {
 			return false;
 	}
 	
-	private void addCardListener(Card playedCard, CardView cv, Player currentPlayer) {
+	public void addCardListener(Card playedCard, CardView cv, Player currentPlayer) {
 		if(playedCard instanceof Ingredient) {
 			cv.addActionListener(new ActionListener() {
 

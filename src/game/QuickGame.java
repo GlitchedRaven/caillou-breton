@@ -12,6 +12,12 @@ import view.*;
 
 public class QuickGame extends Game {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -709136199483886381L;
+
+
 	public ArrayList<Player> designateWinner() {
 		
 			ArrayList<Player> winner = new ArrayList<Player>();
