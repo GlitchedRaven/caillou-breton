@@ -12,6 +12,10 @@ import player.Player;
 import view.Console;
 
 public class AdvancedGame extends Game {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6824291523929158763L;
 	private HashMap<Player, Integer> playerScore;
 	private int round;
 	private Deck allyDeck;
@@ -36,7 +40,7 @@ public class AdvancedGame extends Game {
 		return winner;
 	}
 	
-	public AdvancedGame() {
+	/*public AdvancedGame() {
 		super();
 		this.round = 1;
 		this.playerScore = new HashMap<Player, Integer>();
@@ -49,7 +53,7 @@ public class AdvancedGame extends Game {
 		//this.ingredientDeck = new Deck(Deck.INGREDIENT);
 		
 		
-	}
+	}*/
 
 	public AdvancedGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
 		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);

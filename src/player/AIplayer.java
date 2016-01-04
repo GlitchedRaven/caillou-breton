@@ -3,6 +3,11 @@ package player;
 import game.Game;
 
 public class AIplayer extends Player {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -816761003543910556L;
+
 	public static final int AI_TEMPO = 300;
 	
 	private Strategy strategy;

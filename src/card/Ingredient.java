@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class Ingredient extends Card {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6944435007566927473L;
+
 	public static final String[] INGREDIENT_ACTION = {"Geant", "Engrais","Farfadet"};
 	
 	private int[] giantVector;

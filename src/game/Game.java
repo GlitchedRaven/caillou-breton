@@ -1,13 +1,18 @@
 package game;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Observable;
 import player.*;
 
 
-public abstract class Game extends Observable{
+public abstract class Game extends Observable implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5801013053144630175L;
 	public final static int SPRING = 0;
 	public final static int SUMMER = 1;
 	public final static int AUTUMN = 2;
@@ -16,12 +21,12 @@ public abstract class Game extends Observable{
 
 	private int season;
 	
-	private Scanner user_input = new Scanner( System.in );
+	//private Scanner user_input = new Scanner( System.in );
 	protected ArrayList<Player> players;
 	protected int currentPlayerIndex;
 	
 	
-	public Game() {
+	/*public Game() {
 		super();
 		this.season = SPRING;
 		this.currentPlayerIndex = 0;
@@ -55,7 +60,7 @@ public abstract class Game extends Observable{
 				}
 				// Instantiate the players END
 		
-	}
+	}*/
 	
 	public Game(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames){
 		//constructor where he doesn't ask stupid questions

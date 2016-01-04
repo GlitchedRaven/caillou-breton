@@ -2,16 +2,22 @@ package player;
 
 import player.AIplayer;
 
+import java.io.Serializable;
 import java.util.ListIterator;
 
 import card.Card;
 import card.Ingredient;
 import game.Game;
 
-public class Grow implements Strategy {
+public class Grow implements Strategy, Serializable {
 	
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2567737847628148367L;
+
 	public Grow(){
 		
 	}

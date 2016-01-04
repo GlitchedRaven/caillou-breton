@@ -12,6 +12,12 @@ import view.*;
 
 public class QuickGame extends Game {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -709136199483886381L;
+
+
 	public ArrayList<Player> designateWinner() {
 		
 			ArrayList<Player> winner = new ArrayList<Player>();
@@ -37,12 +43,12 @@ public class QuickGame extends Game {
 				return winner;
 			}
 
-	public QuickGame() {
+	/*public QuickGame() {
 		super();
 		// Distribute cards
 				Deck deck = new Deck(Deck.INGREDIENT);
 				deck.distribute(4, players);
-	}
+	}*/
 	
 	public QuickGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
 		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);

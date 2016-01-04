@@ -7,7 +7,11 @@ import javax.swing.*;
 import game.*;
 import player.Player;
 import java.awt.GridLayout;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 
@@ -21,6 +25,7 @@ public class GameView implements  Observer {
 	private JPanel currentPlayerPanel;
 	
 	private ArrayList<PlayerView> playerViews;
+	private JButton saveButton;
 	
 	
 	
@@ -43,6 +48,7 @@ public class GameView implements  Observer {
 		splitPane.setLeftComponent(playerDetailsPanel);
 		this.playerDetailsPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		this.seasonLabel = new JLabel("Saison actuelle : " + Game.SEASONS[g.getSeason()]);
+		this.playerDetailsPanel.setPreferredSize(new Dimension(350,500));
 		
 		if(this.g instanceof AdvancedGame) {
 			String labelText = String.valueOf(((AdvancedGame) g).getRound());
@@ -69,9 +75,33 @@ public class GameView implements  Observer {
 		}
 			
 		//END population
-		
+		this.saveButton = new JButton("Sauvegarder");
+		//this.saveButton.setPreferredSize(new Dimension(200, 200));
+		playerDetailsPanel.add(saveButton);
+			this.saveButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				String saveFileName = "sauvegarde.txt";
+				FileOutputStream saveFile;
+				ObjectOutputStream saving = null;
+				try {
+					saveFile = new FileOutputStream(saveFileName);
+					saving = new ObjectOutputStream(saveFile);
+					saving.writeObject(g);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} finally {
+					try {
+						saving.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
 	
-		window.setPreferredSize(new Dimension(650,400));//defining the wanted size	
+		window.setPreferredSize(new Dimension(700,600));//defining the wanted size	
 		window.pack(); //size the frame
 		window.setLocationRelativeTo(null);//centers the frame
 		window.setVisible(true);

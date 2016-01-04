@@ -3,6 +3,10 @@ package card;
 import java.util.Arrays;
 
 public class Ally extends Card {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2339940190410564043L;
 	public final static int GIANTMOLE = 0;
 	public final static int WATCHDOG = 1;
 	
