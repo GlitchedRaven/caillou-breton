@@ -20,7 +20,15 @@ public abstract class Game extends Observable implements Serializable{
 	public final static String[] SEASONS = {"Printemps", "Ete", "Automne", "Hiver"};
 
 	private int season;
-	
+	private boolean saved;
+	public boolean isSaved() {
+		return saved;
+	}
+
+	public void setSaved(boolean saved) {
+		this.saved = saved;
+	}
+
 	//private Scanner user_input = new Scanner( System.in );
 	protected ArrayList<Player> players;
 	protected int currentPlayerIndex;

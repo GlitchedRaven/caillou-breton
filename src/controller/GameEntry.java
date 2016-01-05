@@ -48,7 +48,8 @@ public class GameEntry {
 						QuickGameController gc = new QuickGameController((QuickGame) g);
 						GameView gv = gc.getGv();
 					} else {
-						JOptionPane.showMessageDialog(null, "Vous ne pouvez pas charger une partie avancée");
+						//JOptionPane.showMessageDialog(null, "Vous ne pouvez pas charger une partie avancée");
+						AdvancedGameController gc = new AdvancedGameController((AdvancedGame) g);
 					}
 				} catch (IOException | ClassNotFoundException e1) {
 					e1.printStackTrace();

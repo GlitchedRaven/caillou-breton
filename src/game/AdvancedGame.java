@@ -19,6 +19,7 @@ public class AdvancedGame extends Game {
 	private HashMap<Player, Integer> playerScore;
 	private int round;
 	private Deck allyDeck;
+	
 	//private Deck ingredientDeck;
 	
 	@Override

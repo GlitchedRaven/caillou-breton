@@ -80,6 +80,7 @@ public class GameView implements  Observer {
 		playerDetailsPanel.add(saveButton);
 			this.saveButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
+				g.setSaved(true);
 				String saveFileName = "sauvegarde.txt";
 				FileOutputStream saveFile;
 				ObjectOutputStream saving = null;

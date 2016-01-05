@@ -25,18 +25,20 @@ public class AdvancedGameController extends GameController  {
 		super(game);
 		//Card distribution
 		
-				for(ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
-					Player player = p.next();
-					if(player instanceof HumanPlayer){
-						boolean drawAlly = gv.choiceAllyOrRock(player);
+				if (!game.isSaved()) {
+					for (ListIterator<Player> p = game.getPlayers().listIterator(); p.hasNext();) {
+						Player player = p.next();
+						if (player instanceof HumanPlayer) {
+							boolean drawAlly = gv.choiceAllyOrRock(player);
 
-						if(drawAlly) {
-							player.setHand(((AdvancedGame) game).getAllyDeck().remove());
-							player.setNbRocks(0);
+							if (drawAlly) {
+								player.setHand(((AdvancedGame) game).getAllyDeck().remove());
+								player.setNbRocks(0);
+							}
 						}
-					}
+					} 
 				}
-				//END card distribution
+		//END card distribution
 		for(ListIterator<PlayerView> it = gv.getPlayerViews().listIterator(); it.hasNext();) {
 			PlayerView pv = it.next();
 			Player currentPlayer = pv.getPlayer();
