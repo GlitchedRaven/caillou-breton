@@ -50,7 +50,6 @@ public class GameCreatorView {
 		}
 		
 		this.window = new JFrame("choix de partie");
-		//this.console = new Console();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		window.setPreferredSize(new Dimension(500,400));
