@@ -123,7 +123,7 @@ public class AdvancedGame extends Game {
 	
 	public static void main(String[] args, AdvancedGame g) {
 		//AdvancedGame game = new AdvancedGame();
-		AdvancedGameController gc = new AdvancedGameController(g);
+		new AdvancedGameController(g);
 		
 		
 	

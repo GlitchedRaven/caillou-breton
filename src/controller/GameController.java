@@ -16,8 +16,7 @@ import player.*;
 public abstract class GameController  {
 	protected GameView gv;
 	protected Game game;
-	
-	
+
 	public GameController(Game game) {
 		super();
 		this.gv = new GameView(game);
@@ -25,8 +24,6 @@ public abstract class GameController  {
 		
 	}
 
-	
-	
 	public GameView getGv() {
 		return gv;
 	}

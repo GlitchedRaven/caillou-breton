@@ -16,23 +16,14 @@ public class AIplayer extends Player {
 	public AIplayer(String name, Game game, Strategy strategy) {
 		super(name, game);
 		this.strategy = strategy;
-		
-		
-		
 	}
 	
 	public void playACard(){
 		String s = this.strategy.playACard(this, this.getCurrentGame());
 		this.setChanged();
 		this.notifyObservers(s);
-		
 	}
 
-			
-
-
-
-	
 	/*public void run() {
 		while(!this.hand.isEmpty()) {
 			this.playACard();

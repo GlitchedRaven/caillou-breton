@@ -8,7 +8,7 @@ import card.Deck;
 
 import controller.*;
 import player.*;
-import view.*;
+//import view.*;
 
 public class QuickGame extends Game {
 
@@ -62,7 +62,7 @@ public class QuickGame extends Game {
 		
 		//QuickGame g = new QuickGame();
 		QuickGameController gc = new QuickGameController(g);
-		GameView gv = gc.getGv();
+		gc.getGv();
 
 		
 	}
