@@ -4,13 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 import java.util.ListIterator;
-import java.util.Observer;
-
+//import java.util.Observer;
 import javax.swing.JOptionPane;
-
 import card.Ally;
 import card.Card;
-import card.Deck;
+//import card.Deck;
 import card.Ingredient;
 import game.*;
 import player.AIplayer;
@@ -20,7 +18,6 @@ import view.CardView;
 import view.PlayerView;
 
 public class AdvancedGameController extends GameController  {
-
 	public AdvancedGameController(AdvancedGame game) {
 		super(game);
 		//Card distribution
@@ -48,10 +45,8 @@ public class AdvancedGameController extends GameController  {
 				addCardListener(playedCard, cv, currentPlayer);
 			}
 		}
-		
 		if(testAIPlay())
 			changePlayer();
-		
 	}
 	
 	@Override
@@ -60,7 +55,6 @@ public class AdvancedGameController extends GameController  {
 		String choice= (String) JOptionPane.showInputDialog(null, "Choisissez votre action", null, JOptionPane.QUESTION_MESSAGE
 							, null, opt, opt[0]);
 		return choice;
-		
 	}
 
 	@Override
@@ -68,12 +62,9 @@ public class AdvancedGameController extends GameController  {
 		int season = game.getSeason();
 		if(season == Game.WINTER);
 		else game.setSeason(season+1);
-				
-		
 	}
 
 	private void changeRound() {
-		
 		if(((AdvancedGame) game).getRound() < game.getPlayers().size()) {
 			((AdvancedGame) game).setRound();
 			//Card distribution
@@ -81,7 +72,6 @@ public class AdvancedGameController extends GameController  {
 				Player player = p.next();
 				if(player instanceof HumanPlayer){
 					boolean drawAlly = gv.choiceAllyOrRock(player);
-
 					if(drawAlly) {
 						player.setHand(((AdvancedGame) game).getAllyDeck().remove());
 						player.setNbRocks(0);
@@ -103,11 +93,8 @@ public class AdvancedGameController extends GameController  {
 			if(testAIPlay())
 				changePlayer();
 		}
-		
 		else
 			gv.displayWinner(game.designateWinner());
-		
-		
 	}
 
 	@Override

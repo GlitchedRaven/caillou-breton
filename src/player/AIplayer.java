@@ -11,7 +11,7 @@ public class AIplayer extends Player {
 	public static final int AI_TEMPO = 300;
 	
 	private Strategy strategy;
-	private Thread t;
+	//private Thread t;
 
 	public AIplayer(String name, Game game, Strategy strategy) {
 		super(name, game);

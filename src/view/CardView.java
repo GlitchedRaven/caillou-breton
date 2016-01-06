@@ -1,22 +1,24 @@
 package view;
 
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.Font;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 import card.*;
-import player.Player;
+//import player.Player;
 
 public class CardView extends JButton implements Observer {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1846064573808499312L;
 	private Card card;
-	
-	
 	
 	public CardView(Card card) {
 		super();
@@ -24,27 +26,15 @@ public class CardView extends JButton implements Observer {
 		this.card.addObserver(this);
 
 		super.setText("<html>" + card.toString().replaceAll("\\n", "<br>") + "</html>");
-		
 	}
 		
-		
-
-
-
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		// TODO Auto-generated method stub
-		
 	}
-
-
-
-
 
 	public Card getCard() {
 		return card;
 	}
-	
-	
 
 }

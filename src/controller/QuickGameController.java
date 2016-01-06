@@ -4,16 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 import java.util.ListIterator;
-import java.util.Observable;
-import java.util.Observer;
+//import java.util.Observable;
+//import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
 import card.Card;
 import card.Ingredient;
 import game.*;
-import message.MenhirMessage;
-import message.TypeOfAction;
+//import message.MenhirMessage;
+//import message.TypeOfAction;
 import player.AIplayer;
 import player.Player;
 import view.CardView;
@@ -23,8 +23,6 @@ public class QuickGameController extends GameController{
 
 	public QuickGameController(QuickGame game) {
 		super(game);
-		
-		
 		for(ListIterator<PlayerView> it = gv.getPlayerViews().listIterator(); it.hasNext();) {
 			PlayerView pv = it.next();
 			Player currentPlayer = pv.getPlayer();

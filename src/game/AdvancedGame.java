@@ -6,10 +6,10 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import card.*;
 import controller.AdvancedGameController;
-import player.AIplayer;
-import player.HumanPlayer;
+//import player.AIplayer;
+//import player.HumanPlayer;
 import player.Player;
-import view.Console;
+//import view.Console;
 
 public class AdvancedGame extends Game {
 	/**
