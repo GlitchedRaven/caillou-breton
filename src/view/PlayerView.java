@@ -92,9 +92,9 @@ public class PlayerView implements Observer {
 			JOptionPane.showMessageDialog(this.pan, arg);
 		}
 		
-		this.label.setText(player.getName() + "\n" + " Menhir(s) : " + player.getNbMenhirs()
+		this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
 								+ "\n" + " Graine(s) : " + player.getNbRocks()
-								+ "\n" + "Protection : " + Arrays.toString(player.getWatchDogProtection()));
+								+ "\n" + " Protection : " + Arrays.toString(player.getWatchDogProtection()));
 		pan.revalidate();
 		pan.repaint();
 
