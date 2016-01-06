@@ -22,9 +22,17 @@ public class PlayerView implements Observer {
 		this.player = player;
 		this.player.addObserver(this);
 		this.cardViews = new HashMap<Card, CardView>();
-		this.label = new JLabel(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
-									+ "\n" + " Graine(s) : " + player.getNbRocks());
 		
+		if(player.getWatchDogProtection() != null) {
+			this.label = new JLabel(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
+								+ "\n" + " Graine(s) : " + player.getNbRocks()
+								+ "\n" + " Protection : " + Arrays.toString(player.getWatchDogProtection()));
+		}
+		
+		else {
+			this.label = new JLabel(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
+			+ "\n" + " Graine(s) : " + player.getNbRocks());
+		}
 		this.pan = new JPanel(new GridLayout(0, 1, 0, 0));
 		this.pan.add(new JLabel(player.getName()));
 		
@@ -91,10 +99,18 @@ public class PlayerView implements Observer {
 		if(arg instanceof String) {
 			JOptionPane.showMessageDialog(this.pan, arg);
 		}
-		
-		this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
+		int[] zeroVector = {0, 0, 0, 0};
+		if(player.getWatchDogProtection() != null) {
+			this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
 								+ "\n" + " Graine(s) : " + player.getNbRocks()
 								+ "\n" + " Protection : " + Arrays.toString(player.getWatchDogProtection()));
+		}
+		
+		else {
+			this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
+			+ "\n" + " Graine(s) : " + player.getNbRocks());
+			
+		}
 		pan.revalidate();
 		pan.repaint();
 

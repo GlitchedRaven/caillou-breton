@@ -19,7 +19,7 @@ public abstract class Player extends Observable implements Serializable{
 	protected String name;
 	protected int nbRocks;
 	protected int nbMenhirs;
-	protected int[] watchDogProtection = {0, 0, 0, 0};
+	protected int[] watchDogProtection = null;
 	protected ArrayList<Card> hand;
 	protected Game currentGame;
 	
