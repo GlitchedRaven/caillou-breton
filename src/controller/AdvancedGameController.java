@@ -4,11 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 import java.util.ListIterator;
-//import java.util.Observer;
-import javax.swing.JOptionPane;
+
 import card.Ally;
 import card.Card;
-//import card.Deck;
+
 import card.Ingredient;
 import game.*;
 import player.AIplayer;
@@ -49,13 +48,8 @@ public class AdvancedGameController extends GameController  {
 			changePlayer();
 	}
 	
-	@Override
-	public String choiceAction() {
-		Object[] opt = {"Geant", "Engrais", "Farfadet"};
-		String choice= (String) JOptionPane.showInputDialog(null, "Choisissez votre action", null, JOptionPane.QUESTION_MESSAGE
-							, null, opt, opt[0]);
-		return choice;
-	}
+	
+	
 
 	@Override
 	public void changeSeason() {
@@ -139,14 +133,14 @@ public class AdvancedGameController extends GameController  {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					String playedAction = choiceAction();
+					String playedAction = gv.choiceAction();
 
 					if(playedAction.equals("Geant"))
 						currentPlayer.playGiant((Ingredient) playedCard);
 					else if(playedAction.equals("Engrais"))
 						currentPlayer.playFertilizer((Ingredient) playedCard);
 					else if(playedAction.equals("Farfadet")) {
-						Player victim = choiceVictim();
+						Player victim = gv.choiceVictim();
 						Card victimLastCard = victim.getHand().get(victim.getHand().size() -1);
 
 						if(victimLastCard instanceof Ally) { //Ally card is always the last card
@@ -173,7 +167,7 @@ public class AdvancedGameController extends GameController  {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					if(((Ally) playedCard).getAllyType() == Ally.GIANTMOLE) {
-						Player victim = choiceVictim();
+						Player victim = gv.choiceVictim();
 						currentPlayer.playGiantMole((Ally) playedCard, victim);
 					}
 					else if(((Ally) playedCard).getAllyType() == Ally.WATCHDOG)

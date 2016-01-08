@@ -164,4 +164,26 @@ public class GameView implements  Observer {
 		else
 			return false;
 	}
+	public String choiceAction() {
+		Object[] opt = {"Geant", "Engrais", "Farfadet"};
+		String choice= (String) JOptionPane.showInputDialog(null, "Choisissez votre action", null, JOptionPane.QUESTION_MESSAGE
+							, null, opt, opt[0]);
+		return choice;
+	}
+	public Player choiceVictim() {
+		HashMap<String, Player> options = new HashMap<String, Player>();
+		for(ListIterator<Player> p = g.getPlayers().listIterator(); p.hasNext();) {
+			Player player = p.next();
+			options.put(player.getName() + "=> graines :" + player.getNbRocks() + " menhirs :" + player.getNbMenhirs(), player);			
+
+		}
+		
+		Object[] opt = new Object[options.size()];
+		options.keySet().toArray(opt);
+		
+		String victimName = (String) JOptionPane.showInputDialog(null, "Choisissez votre victime", null, JOptionPane.QUESTION_MESSAGE
+				, null, opt, opt[0]);
+		return options.get(victimName);
+	}
 }
+

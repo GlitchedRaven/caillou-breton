@@ -1,16 +1,12 @@
 package view;
 
-//import java.awt.Font;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
+
+
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JButton;
-//import javax.swing.JOptionPane;
-
 import card.*;
-//import player.Player;
+
 
 public class CardView extends JButton implements Observer {
 
@@ -32,7 +28,8 @@ public class CardView extends JButton implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		// TODO Auto-generated method stub
 	}
-
+	
+	
 	public Card getCard() {
 		return card;
 	}

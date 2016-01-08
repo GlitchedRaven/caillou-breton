@@ -9,6 +9,7 @@ import java.util.ListIterator;
 
 import javax.swing.JOptionPane;
 
+import card.Ally;
 import card.Card;
 import card.Ingredient;
 import game.*;
@@ -26,40 +27,17 @@ public class QuickGameController extends GameController{
 		for(ListIterator<PlayerView> it = gv.getPlayerViews().listIterator(); it.hasNext();) {
 			PlayerView pv = it.next();
 			Player currentPlayer = pv.getPlayer();
-			//currentPlayer.addObserver(this);
+			
 			for(Iterator<CardView> it2 = pv.getCardViews().values().iterator(); it2.hasNext();) {
 				CardView cv = it2.next();
 				Card playedCard = cv.getCard();
-				cv.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						String playedAction = choiceAction();
-						
-						if(playedAction.equals("Geant"))
-							currentPlayer.playGiant((Ingredient) playedCard);
-						else if(playedAction.equals("Engrais"))
-							currentPlayer.playFertilizer((Ingredient) playedCard);
-						else if(playedAction.equals("Farfadet")) {
-							Player victim = choiceVictim();	
-								currentPlayer.playFarfadet((Ingredient) playedCard, victim);
-							}
-						
-						changePlayer();
-						
-						
-					}
-				});
+				addCardListener(playedCard, cv, currentPlayer);
 			}
-			
 			
 		}
 		
-		
 		if(testAIPlay())
 			changePlayer();
-		
-		
 	}
 	
 	
@@ -111,20 +89,41 @@ public class QuickGameController extends GameController{
 		else game.setSeason(season+1);
 	}
 
-	/*@Override
-	public void update(Observable o, Object arg) {
-		
-		if(arg instanceof MenhirMessage){
-			Card card = ((MenhirMessage) arg).getCard();
-			TypeOfAction type = ((MenhirMessage) arg).getType();
-			
-			if(type.equals(TypeOfAction.PLAY)) {
-				changePlayer();
-				testAIPlay();
-			}
-			
+	private void addCardListener(Card playedCard, CardView cv, Player currentPlayer) {
+		if(playedCard instanceof Ingredient) {
+			cv.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					String playedAction = choiceAction();
+
+					if(playedAction.equals("Geant"))
+						currentPlayer.playGiant((Ingredient) playedCard);
+					else if(playedAction.equals("Engrais"))
+						currentPlayer.playFertilizer((Ingredient) playedCard);
+					else if(playedAction.equals("Farfadet")) {
+						Player victim = gv.choiceVictim();
+						Card victimLastCard = victim.getHand().get(victim.getHand().size() -1);
+
+						if(victimLastCard instanceof Ally) { //Ally card is always the last card
+							if(((Ally) victimLastCard).getAllyType() == Ally.WATCHDOG) {
+								if(gv.choicePlayWatchDog(victim)) {
+									victim.playWatchDog((Ally) victimLastCard);
+
+								}
+							}	
+							
+						}
+						currentPlayer.playFarfadet((Ingredient) playedCard, victim);
+					}
+					changePlayer();
+
+
+				}
+			});
 		}
 		
-	}*/
+		
+	}
 }
 	

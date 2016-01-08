@@ -96,21 +96,16 @@ public class PlayerView implements Observer {
 		}
 		
 		
-		if(arg instanceof String) {
+		if(arg instanceof String) 
 			JOptionPane.showMessageDialog(this.pan, arg);
-		}
-		int[] zeroVector = {0, 0, 0, 0};
-		if(player.getWatchDogProtection() != null) {
-			this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
+		
+		
+		this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
 								+ "\n" + " Graine(s) : " + player.getNbRocks()
 								+ "\n" + " Protection : " + Arrays.toString(player.getWatchDogProtection()));
-		}
 		
-		else {
-			this.label.setText(player.getName() + "\n" + "=> Menhir(s) : " + player.getNbMenhirs()
-			+ "\n" + " Graine(s) : " + player.getNbRocks());
-			
-		}
+		
+		
 		pan.revalidate();
 		pan.repaint();
 
