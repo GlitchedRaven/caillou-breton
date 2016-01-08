@@ -49,8 +49,6 @@ public class AdvancedGameController extends GameController  {
 	}
 	
 	
-	
-
 	@Override
 	public void changeSeason() {
 		int season = game.getSeason();

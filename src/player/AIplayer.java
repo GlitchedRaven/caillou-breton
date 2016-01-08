@@ -24,18 +24,4 @@ public class AIplayer extends Player {
 		this.notifyObservers(s);
 	}
 
-	/*public void run() {
-		while(!this.hand.isEmpty()) {
-			this.playACard();
-			try{
-				this.wait();
-			} catch(InterruptedException e) {
-				e.printStackTrace();
-				
-			}
-			
-		}
-		
-	}
-	*/
 }

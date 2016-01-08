@@ -9,6 +9,7 @@ import player.*;
 
 public class Console implements Viewable {
 	
+	private Game game;
 	private Scanner userInput;
 	
 	public int choiceTypeOfGame() {
@@ -46,9 +47,10 @@ public class Console implements Viewable {
 		else
 			return false;
 	}
-	public int choiceVictim() {
+	public Player choiceVictim() {
 		System.out.println("Quel joueur souhaitez vous attaquer ?");
-		return this.userInput.nextInt();  
+		int playerNumber =  this.userInput.nextInt();
+		return game.getPlayers().get(playerNumber);
 	}
 	
 	public boolean choiceAllyOrRock(Player player){

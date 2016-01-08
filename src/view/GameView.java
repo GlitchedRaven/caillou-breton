@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 
-public class GameView implements  Observer {
+public class GameView implements  Observer, Viewable {
 
 	private Game g;
 	private JFrame window;
@@ -76,7 +76,6 @@ public class GameView implements  Observer {
 			
 		//END population
 		this.saveButton = new JButton("Sauvegarder");
-		//this.saveButton.setPreferredSize(new Dimension(200, 200));
 		playerDetailsPanel.add(saveButton);
 			this.saveButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
