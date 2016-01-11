@@ -8,7 +8,7 @@ import card.Deck;
 
 import controller.*;
 import player.*;
-//import view.*;
+
 
 public class QuickGame extends Game {
 
@@ -43,13 +43,6 @@ public class QuickGame extends Game {
 				return winner;
 			}
 
-	/*public QuickGame() {
-		super();
-		// Distribute cards
-				Deck deck = new Deck(Deck.INGREDIENT);
-				deck.distribute(4, players);
-	}*/
-	
 	public QuickGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
 		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);
 		// Distribute cards

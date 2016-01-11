@@ -20,7 +20,6 @@ import game.QuickGame;
 //import game.QuickGame;
 //import view.Console;
 import view.GameCreatorView;
-//import view.GameView;
 
 public class GameEntry {	
 
@@ -48,7 +47,6 @@ public class GameEntry {
 						QuickGameController gc = new QuickGameController((QuickGame) g);
 						gc.getGv().update(g, g.getCurrentPlayer());
 					} else {
-						//JOptionPane.showMessageDialog(null, "Vous ne pouvez pas charger une partie avancée");
 						AdvancedGameController gc = new AdvancedGameController((AdvancedGame) g);
 						gc.getGv().update(g, g.getCurrentPlayer());
 					}
