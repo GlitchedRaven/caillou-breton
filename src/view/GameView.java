@@ -29,6 +29,10 @@ public class GameView implements  Observer, Viewable {
 	
 	
 	
+	public JButton getSaveButton() {
+		return saveButton;
+	}
+
 	public GameView(Game g) {
 		super();
 		this.g = g;
@@ -77,29 +81,6 @@ public class GameView implements  Observer, Viewable {
 		//END population
 		this.saveButton = new JButton("Sauvegarder");
 		playerDetailsPanel.add(saveButton);
-			this.saveButton.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e){
-				g.setSaved(true);
-				String saveFileName = "sauvegarde.txt";
-				FileOutputStream saveFile;
-				ObjectOutputStream saving = null;
-				try {
-					saveFile = new FileOutputStream(saveFileName);
-					saving = new ObjectOutputStream(saveFile);
-					saving.writeObject(g);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} finally {
-					try {
-						saving.close();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-			}
-		});
 	
 		window.setPreferredSize(new Dimension(700,600));//defining the wanted size	
 		window.pack(); //size the frame
