@@ -2,22 +2,26 @@ package game;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
-
-
 import card.Deck;
-
 import controller.*;
 import player.*;
 
-
+/**
+ * Classe représentant la partie rapide
+ * 
+ *
+ */
 public class QuickGame extends Game {
 
 	/**
-	 * 
+	 * serialVersionUID nécessaire à la sérialisation
 	 */
 	private static final long serialVersionUID = -709136199483886381L;
 
-
+	/**
+	 * Redéfinition de la méthode designateWinner() correspondant aux standards de la partie rapide
+	 * @return Player
+	 */
 	public ArrayList<Player> designateWinner() {
 		
 			ArrayList<Player> winner = new ArrayList<Player>();
@@ -42,7 +46,14 @@ public class QuickGame extends Game {
 			}
 				return winner;
 			}
-
+	/**
+	 * constructeur de la partie rapide
+	 * @param numberAIPlayers : nombre de joueurs IA
+	 * @param aIDifficulties : difficulté des joueurs IA
+	 * @param aINames : nom des joueurs IA
+	 * @param numberHumanPlayers : nombre de joueurs humains
+	 * @param humanNames : nom de joueurs huamins
+	 */
 	public QuickGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
 		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);
 		// Distribute cards
@@ -50,14 +61,15 @@ public class QuickGame extends Game {
 				deck.distribute(4, players);
 	}
 
-
+	/**
+	 * méthode permettant de démarrer une partie rapide en GUI
+	 * @param g : partie rapide
+	 */
 	public static void main(String[] args, QuickGame g) {
 		
 		//QuickGame g = new QuickGame();
 		QuickGameController gc = new QuickGameController(g);
 		gc.getGv();
-
-		
 	}
 }
 

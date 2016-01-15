@@ -11,21 +11,35 @@ import controller.AdvancedGameController;
 import player.Player;
 
 /**
- * Classe représentant une partie avancée @see Game
+ * Classe représentant une partie avancée
  * 
  *
  */
 public class AdvancedGame extends Game {
 	/**
-	 * 
+	 * serialVersionUID nécessaire à la sérialisation
 	 */
 	private static final long serialVersionUID = 6824291523929158763L;
+	/**
+	 * HashMap pour relier les scores aux joueurs
+	 */
 	private HashMap<Player, Integer> playerScore;
+	/**
+	 * entier représentant la manche en cours
+	 */
 	private int round;
+	/**
+	 *@see deck.Deck
+	 *deck des cartes alliées
+	 */
 	private Deck allyDeck;
 	
 	
 	@Override
+	/**
+	 * redéfinition de la méthode designateWinner() de game.Game pour correspondre aux standards de la partie avancée
+	 * @return Player
+	 */
 	public ArrayList<Player> designateWinner() {
 		ArrayList<Player> winner = new ArrayList<Player>();
 		winner.add(this.players.get(0));
@@ -44,7 +58,14 @@ public class AdvancedGame extends Game {
 		return winner;
 	}
 	
-
+	/**
+	 * Constructeur de la partie avancée
+	 * @param numberAIPlayers : nombre de joueurs IA
+	 * @param aIDifficulties : difficultés de joueurs IA
+	 * @param aINames : noms des joueurs IA
+	 * @param numberHumanPlayers : nombre de joueurs humains
+	 * @param humanNames : noms des joueurs humains
+	 */
 	public AdvancedGame(int numberAIPlayers, String[] aIDifficulties, String[] aINames, int numberHumanPlayers, String[] humanNames) {
 		super(numberAIPlayers, aIDifficulties, aINames, numberHumanPlayers, humanNames);
 		this.round = 1;
@@ -61,20 +82,33 @@ public class AdvancedGame extends Game {
 	
 	
 
-
+	/**
+	 * getter du HashMap des scores
+	 * @return HashMap
+	 */
 	public HashMap<Player, Integer> getPlayerScore() {
 		return playerScore;
 	}
 
-
+	/**
+	 * setter du HashMap playerScore
+	 * @param playerScore
+	 */
 	public void setPlayerScore(HashMap<Player, Integer> playerScore) {
 		this.playerScore = playerScore;
 	}
-
+	
+	/**
+	 * getter de l'entier coreespondant à la manche courante
+	 * @return round
+	 */
 	public int getRound() {
 		return round;
 	}
 
+	/**
+	 * méthode de changement de la manche en cours, gère tous les changements associés (distribution de cartes alliées...)
+	 */
 	public void setRound() {
 		for(ListIterator<Player> p = this.players.listIterator(); p.hasNext();) {
 			Player player = p.next();
@@ -97,24 +131,21 @@ public class AdvancedGame extends Game {
 		this.notifyObservers();
 	}
 
-
+	/**
+	 * getter du deck de cartes alliées
+	 * @return allydeck
+	 */
 	public Deck getAllyDeck() {
 		return allyDeck;
 	}
 
 
-	
-	
-
-	
-	
+	/**
+	 * méthode permettant de démarrer une partie avancée en GUI
+	 * @param g : partie avancée
+	 */
 	public static void main(String[] args, AdvancedGame g) {
 		new AdvancedGameController(g);
-		
-		
-	
-
-	
 	}
 }
 
