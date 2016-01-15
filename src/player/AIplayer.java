@@ -17,7 +17,7 @@ public class AIplayer extends Player {
 	//private Thread t;
 
 	/**
-	 * Instantie une nouvelle IA .
+	 * Instancie une nouvelle IA .
 	 *
 	 * @param name le nom de l'IA
 	 * @param game la partie dont l'IA fera partie

@@ -8,20 +8,30 @@ import java.util.ListIterator;
 import card.Card;
 import card.Ingredient;
 import game.Game;
-
+/**
+ * La classe Grow représente une stratégie possible pour les IA, ici l'IA jouera le meilleur géant possible du tour courant  pendant les deux premiers tours, avant de jouer le meilleur engrais
+ * disponible pendant les deux tours suivants.
+ *
+ */
 public class Grow implements Strategy, Serializable {
-	
-	
+
 	
 	/**
-	 * 
+	 * serialVersionUID nécessaire à la sérialisation
 	 */
 	private static final long serialVersionUID = -2567737847628148367L;
-
+	/**
+	 * Instancie un objet de la classe Grow
+	 */
 	public Grow(){
 		
 	}
-
+	/**
+	 * Méthode permettant de mettre en oeuvre la stratégie.
+	 * @param player : le joueur IA utilisant cette stratégie
+	 * @param game : la partie courante
+	 * @return
+	 */
 	@Override
 	public String playACard(AIplayer player, Game game) {
 		Ingredient cardToPlay = (Ingredient) player.getHand().get(0);

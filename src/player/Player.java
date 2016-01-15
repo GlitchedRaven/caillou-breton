@@ -192,7 +192,7 @@ public abstract class Player extends Observable implements Serializable{
 	
 
 	/**
-	 * Instantie un nouveau joueur.
+	 * Instancie un nouveau joueur.
 	 *
 	 * @param name le nom du joueur
 	 * @param game la partie dont fera partie le joueur
