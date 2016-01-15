@@ -12,8 +12,9 @@ import view.*;
 public abstract class GameController  {
 	protected GameView gv;
 	protected Game game;
-
+	
 	public GameController(Game game) {
+		
 		super();
 		this.gv = new GameView(game);
 		this.game = game;

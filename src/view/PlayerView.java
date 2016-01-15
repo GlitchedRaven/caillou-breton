@@ -8,15 +8,30 @@ import message.*;
 
 import player.*;
 
+/**
+ * La classe PlayerView est la vue graphique d'un joueur.
+ */
 public class PlayerView implements Observer {
+	
+	/** Le joueur représenté par la vue. */
 	private Player player;
+	
+	/** Les vues associées à chaques cartes que le joueur a en sa possession. */
 	private HashMap<Card, CardView> cardViews;
 	
+	/** Le label contenant les informaions principales du joueur (nom, graines, menhirs, etc...) */
 	private  JLabel label;
+	
+	/** Le panneau contenant la vue complète d'un joueur. */
 	private JPanel pan;
 	
 	
 	
+	/**
+	 * Intantie une nouvelle vue pour un joueur.
+	 *
+	 * @param player le joueur à représenter.
+	 */
 	public PlayerView(Player player) {
 		super();
 		this.player = player;
@@ -48,26 +63,49 @@ public class PlayerView implements Observer {
 	}
 
 
+	/**
+	 * Getter du label.
+	 *
+	 * @return le label
+	 */
 	public JLabel getLabel() {
 		return label;
 	}
 
 
+	/**
+	 * Getter du panneau d'information.
+	 *
+	 * @return le panneau
+	 */
 	public JPanel getPan() {
 		return pan;
 	}
 
 
+	/**
+	 * Getter de la liste de vue de carte.
+	 *
+	 * @return la liste de vue de carte
+	 */
 	public HashMap<Card, CardView> getCardViews() {
 		return cardViews;
 	}
 
 
+	/**
+	 * Getter du joueur représenté.
+	 *
+	 * @return le joueur
+	 */
 	public Player getPlayer() {
 		return player;
 	}
 
 
+	/* (non-Javadoc)
+	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		if(arg instanceof MenhirMessage){

@@ -69,7 +69,7 @@ public class QuickGame extends Game {
 		
 		//QuickGame g = new QuickGame();
 		QuickGameController gc = new QuickGameController(g);
-		gc.getGv();
+		
 	}
 }
 
