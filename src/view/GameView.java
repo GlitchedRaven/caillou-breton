@@ -10,13 +10,12 @@ import java.awt.GridLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 
-// TODO: Auto-generated Javadoc
 /**
  * la classe GameView est la vue graphique d'une partie de Menhir.
  */
 public class GameView implements  Observer {
 
-	/** La partie représentée pa la vue. */
+	/** La partie représentée par la vue. */
 	private Game g;
 	
 	/** La fenêtre principale. */
@@ -37,7 +36,7 @@ public class GameView implements  Observer {
 	/** La liste des vues des joueurs. */
 	private ArrayList<PlayerView> playerViews;
 	
-	/** Le boutton de sauvegarde. */
+	/** Le bouton de sauvegarde. */
 	private JButton saveButton;
 	
 	
@@ -52,7 +51,7 @@ public class GameView implements  Observer {
 	}
 
 	/**
-	 * Instantie une nouvelle vue d'une partie en créeant et en agençant les différentes fenêtres
+	 * Instancie une nouvelle vue d'une partie en créant et en agenceant les différentes fenêtres.
 	 *
 	 * @param g le jeu a représenter
 	 */

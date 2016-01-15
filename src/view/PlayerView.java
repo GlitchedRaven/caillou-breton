@@ -28,7 +28,7 @@ public class PlayerView implements Observer {
 	
 	
 	/**
-	 * Intantie une nouvelle vue pour un joueur.
+	 * Intancie une nouvelle vue pour un joueur.
 	 *
 	 * @param player le joueur à représenter.
 	 */

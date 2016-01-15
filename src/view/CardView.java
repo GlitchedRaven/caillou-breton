@@ -14,14 +14,13 @@ import card.*;
  */
 public class CardView extends JButton implements Observer {
 
-	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1846064573808499312L;
 	
 	/** La carte représentée par la vue. */
 	private Card card;
 	
 	/**
-	 * Instantie une nouvelle vue pour une carte.
+	 * Instancie une nouvelle vue pour une carte.
 	 *
 	 * @param card la carte à représenter
 	 */
