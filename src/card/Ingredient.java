@@ -2,7 +2,6 @@ package card;
 
 import java.util.Arrays;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe Ingredient représente une carte d'ingrédient avec les vecteurs de chaque pouvoir.
  */

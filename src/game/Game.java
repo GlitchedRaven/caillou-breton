@@ -35,7 +35,7 @@ public abstract class Game extends Observable implements Serializable{
 	 */
 	public final static int WINTER = 3;
 	/**
-	 * Tableau d'association des saisons à leur noms en français
+	 * Tableau d'association des saisons à leur noms en français.
 	 */
 	public final static String[] SEASONS = {"Printemps", "Ete", "Automne", "Hiver"};
 	/**
@@ -56,7 +56,7 @@ public abstract class Game extends Observable implements Serializable{
 	protected int currentPlayerIndex;
 	
 	/**
-	 * Getter du booléen saved
+	 * Getter du booléen saved.
 	 * @return boolean
 	 */
 	public boolean isSaved() {
@@ -64,7 +64,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Setter du booléen saved
+	 * Setter du booléen saved.
 	 * @param saved
 	 */
 	public void setSaved(boolean saved) {
@@ -72,7 +72,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Constructeur de la classe Game, il appelle le constructeur des joueurs 
+	 * Constructeur de la classe Game, il appelle le constructeur des joueurs.
 	 * @param numberAIPlayers : nombre de joueurs IA
 	 * @param aIDifficulties : difficulté des joueurs IA
 	 * @param aINames : nom des joueurs IA
@@ -97,13 +97,13 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Méthode abstraite avec une implémentation différente selon le type de partie
+	 * Méthode abstraite avec une implémentation différente selon le type de partie.
 	 * @return la liste des vainqueurs
 	 */
 	public abstract ArrayList<Player> designateWinner(); 
 	
 	/**
-	 * Getter de la saison actuelle
+	 * Getter de la saison actuelle.
 	 * @return int
 	 */
 	public int getSeason() {
@@ -112,7 +112,7 @@ public abstract class Game extends Observable implements Serializable{
 
 
 	/**
-	 * Setter de season, notifie les observers en cas de changement
+	 * Setter de season, notifie les observers en cas de changement.
 	 * @param season
 	 */
 	public void setSeason(int season) {
@@ -122,7 +122,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	/**
 	 * 
-	 * Getter de l'indice du joueur courant
+	 * Getter de l'indice du joueur courant.
 	 * @return int
 	 */
 	public int getCurrentPlayerIndex() {
@@ -130,7 +130,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 
 	/**
-	 * Getter de la liste des joueurs
+	 * Getter de la liste des joueurs.
 	 * @return la liste des joueurs
 	 */
 	public ArrayList<Player> getPlayers() {
@@ -138,7 +138,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Getter du joueur courant
+	 * Getter du joueur courant.
 	 * @return Player
 	 */
 	public Player getCurrentPlayer() {
@@ -146,7 +146,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Setter du joueur courant, notifie les observers en cas de changements
+	 * Setter du joueur courant, notifie les observers en cas de changements.
 	 * @param index
 	 */
 	public void setCurrentPlayer(int index) {

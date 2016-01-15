@@ -7,7 +7,7 @@ import controller.*;
 import player.*;
 
 /**
- * Classe représentant la partie rapide
+ * Classe représentant la partie rapide.
  * 
  *
  */
@@ -19,7 +19,7 @@ public class QuickGame extends Game {
 	private static final long serialVersionUID = -709136199483886381L;
 
 	/**
-	 * Redéfinition de la méthode designateWinner() correspondant aux standards de la partie rapide
+	 * Redéfinition de la méthode designateWinner() correspondant aux standards de la partie rapide.
 	 * @return Player
 	 */
 	public ArrayList<Player> designateWinner() {
@@ -62,7 +62,7 @@ public class QuickGame extends Game {
 	}
 
 	/**
-	 * Méthode permettant de démarrer une partie rapide en GUI.
+	 * Méthode permettant de démarrer une partie rapide en interface graphique.
 	 * @param g : partie rapide
 	 */
 	public static void main(String[] args, QuickGame g) {

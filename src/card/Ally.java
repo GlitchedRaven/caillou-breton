@@ -2,7 +2,6 @@ package card;
 
 import java.util.Arrays;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe Ally représente une carte allié. Le type précis de cet allié est donné par un attribut.
  */

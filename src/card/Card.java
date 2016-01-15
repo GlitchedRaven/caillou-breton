@@ -3,7 +3,6 @@ package card;
 import java.io.Serializable;
 import java.util.Observable;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe abstraite Card représente une carte à jouer dans son minimum. 
  */
