@@ -12,16 +12,41 @@ import javax.swing.SwingConstants;
 
 import game.AdvancedGame;
 import game.QuickGame;
-
+/**
+ * Cette classe permet la création de parties via une interface graphique composée de JOption_pane et d'une fenêtre de choix entre partie rapide
+ * et partie avancée et vérifie qu'une aprtie ne contienne pas plus de 6 joueurs (IA et humains). L'ordre de jeu est déterminé par l'ordre de création des joueurs ainsi
+ * Les joueurs IA jouent toujours avant les joueurs humains.
+ * Pour le lancement de la partie un appel est réalisé au main de la partie concernée.
+ * @see game.QuickGame, game.AdvancedGame, game.Game
+ */
 public class GameCreatorView {
-
+	/**
+	 * Nombre de joueurs IA
+	 */
 	private int numberAIplayers;
+	/**
+	 * Difficultés des joueurs IA, dans l'ordre dans lequel ils sont créés.
+	 */
 	private String[] aIDifficulties;
+	/**
+	 * Noms des joueurs IA, dans l'ordre dans lequel ils sont créés.
+	 */
 	private String[] aiNames;
+	/**
+	 *  Nombre de joueurs humains.
+	 */
 	private int numberHumanPlayers;
+	/**
+	 * Noms des joueurs humains, dans l'ordre de leur création.
+	 */
 	private String[] humanNames;
+	/**
+	 * Fenêtre qui servira au choix partie rapide.partie avancée
+	 */
 	private JFrame window;
-	
+	/**
+	 * Instancie un Objet de GameCreatorView qui va créer la partie selon les choix des joueurs humains.
+	 */
 	public GameCreatorView(){
 		
 		Object[] opt = {0,1,2,3,4,5,6};

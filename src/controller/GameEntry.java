@@ -20,9 +20,19 @@ import game.QuickGame;
 //import game.QuickGame;
 //import view.Console;
 import view.GameCreatorView;
-
+/**
+ * Classe contenant la méthode main, elle sert de point d'entrée au jeu, en présentant l'option de créer ou de charger une partie.
+ * 
+ *
+ */
 public class GameEntry {	
-
+	/**
+	 * Méthode main qui va permettre le chargement d'une aprtie sauvegardée ou la création d'une nouvelle partie dans une fenêtre.
+	 * La partie sauvegardée doit être sérialisée dans le fichier sauvegarde.txt à la racine du projet.
+	 * Pour créer une partie, on fait appel  à la fonction GameCreatorView.
+	 * @see view.GameCreatorView
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		JFrame window = new JFrame("choix de partie");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
