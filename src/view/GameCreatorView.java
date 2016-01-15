@@ -17,7 +17,9 @@ import game.QuickGame;
  * et partie avancée et vérifie qu'une aprtie ne contienne pas plus de 6 joueurs (IA et humains). L'ordre de jeu est déterminé par l'ordre de création des joueurs ainsi
  * Les joueurs IA jouent toujours avant les joueurs humains.
  * Pour le lancement de la partie un appel est réalisé au main de la partie concernée.
- * @see game.QuickGame, game.AdvancedGame, game.Game
+ * @see game.QuickGame 
+ * @see game.AdvancedGame 
+ * @see game.Game
  */
 public class GameCreatorView {
 	/**

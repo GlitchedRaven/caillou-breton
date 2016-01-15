@@ -97,8 +97,8 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * classe abstraite avec une implémentation différente selon le type de partie
-	 * @return ArrayList<Player>
+	 * Méthode abstraite avec une implémentation différente selon le type de partie
+	 * @return la liste des vainqueurs
 	 */
 	public abstract ArrayList<Player> designateWinner(); 
 	
@@ -130,8 +130,8 @@ public abstract class Game extends Observable implements Serializable{
 	}
 
 	/**
-	 * Getter de l'arraylist des joueurs
-	 * @return ArrayList<Player>
+	 * Getter de la liste des joueurs
+	 * @return la liste des joueurs
 	 */
 	public ArrayList<Player> getPlayers() {
 		return players;

@@ -7,11 +7,10 @@ import java.util.Arrays;
  * La classe Ingredient représente une carte d'ingrédient avec les vecteurs de chaque pouvoir.
  */
 public class Ingredient extends Card {
-	
-	/** The Constant serialVersionUID. */
+
 	private static final long serialVersionUID = 6944435007566927473L;
 
-	/** The Constant INGREDIENT_ACTION. */
+	/**Definit toutes les actions des ingrédients*/
 	public static final String[] INGREDIENT_ACTION = {"Geant", "Engrais","Farfadet"};
 	
 	/** Le vecteur du pouvoir Géant. */
@@ -24,34 +23,34 @@ public class Ingredient extends Card {
 	private int[] fertilizerVector;
 
 	/**
-	 * Gets the giant vector.
+	 * Getter du vecteur Géant.
 	 *
-	 * @return the giant vector
+	 * @return le vecteur du pouvoir Géant
 	 */
 	public int[] getGiantVector() {
 		return giantVector;
 	}
 
 	/**
-	 * Gets the farfadet vector.
+	 * Getter du vecteur Farfadet.
 	 *
-	 * @return the farfadet vector
+	 * @return le vecteur du pouvoir Farfadet
 	 */
 	public int[] getFarfadetVector() {
 		return farfadetVector;
 	}
 
 	/**
-	 * Gets the fertilizer vector.
+	 * Getter du vecteur Engrais.
 	 *
-	 * @return the fertilizer vector
+	 * @return le vecteur du pouvoir Engrais
 	 */
 	public int[] getFertilizerVector() {
 		return fertilizerVector;
 	}
 
 	/**
-	 * Instantie une nouvelle carte Ingredient.
+	 * Instancie une nouvelle carte Ingredient.
 	 *
 	 * @param name est le nom de la carte
 	 * @param giantVector est le vecteur de Géant

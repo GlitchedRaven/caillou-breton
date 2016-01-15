@@ -29,7 +29,7 @@ public class AdvancedGame extends Game {
 	 */
 	private int round;
 	/**
-	 *@see deck.Deck
+	 *@see card.Deck
 	 *Deck des cartes alliées
 	 */
 	private Deck allyDeck;
@@ -142,7 +142,7 @@ public class AdvancedGame extends Game {
 
 	/**
 	 * Méthode permettant de démarrer une partie avancée en GUI
-	 * @param g : partie avancée
+	 * @param g la partie avancée
 	 */
 	public static void main(String[] args, AdvancedGame g) {
 		new AdvancedGameController(g);
