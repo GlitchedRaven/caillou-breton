@@ -1,6 +1,6 @@
 package message;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * L'énumération des types d'actions pouvant être demandées par un MenhirMessage.
  * 

@@ -2,7 +2,6 @@ package message;
 
 import card.Card;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe MenhirMessage a pour vocation de rendre plus simple la communication entre Observable/Observer.
  * Un MenhirMessage consiste alors en un type dont les possibilités sont donnés dans l'enumération TypeOfAction et d'une carte 
@@ -20,7 +19,7 @@ public class MenhirMessage {
 	private TypeOfAction type;
 	
 	/**
-	 * Instantie un nouveau message.
+	 * Instancie un nouveau message.
 	 *
 	 * @param card la carte sujette
 	 * @param type le type d'action demandé
@@ -32,18 +31,18 @@ public class MenhirMessage {
 	}
 	
 	/**
-	 * Gets the card.
+	 * Getter de la carte
 	 *
-	 * @return the card
+	 * @return la carte
 	 */
 	public Card getCard() {
 		return card;
 	}
 	
 	/**
-	 * Gets the type.
+	 * Getter du type d'action
 	 *
-	 * @return the type
+	 * @return le type d'action
 	 */
 	public TypeOfAction getType() {
 		return type;

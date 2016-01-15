@@ -20,7 +20,6 @@ import player.Player;
 import view.CardView;
 import view.PlayerView;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe QuickGameController est le controleur des parties rapides.
  */

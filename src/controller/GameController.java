@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 import game.Game;
 import view.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * La classe GameController est le minimum nécessaire pour controller une partie et sa vue.
  * La classe est adaptée pour une utilisation sur des vues graphiques. Elle s'occupe principalement d'ajouter les 
