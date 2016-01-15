@@ -19,31 +19,31 @@ public abstract class Game extends Observable implements Serializable{
 	 */
 	private static final long serialVersionUID = 5801013053144630175L;
 	/**
-	 * association entre les saisons et des entiers
+	 * Association entre les saisons et des entiers
 	 */
 	public final static int SPRING = 0;
 	/**
-	 * association entre les saisons et des entiers
+	 * Association entre les saisons et des entiers
 	 */
 	public final static int SUMMER = 1;
 	/**
-	 * association entre les saisons et des entiers
+	 * Association entre les saisons et des entiers
 	 */
 	public final static int AUTUMN = 2;
 	/**
-	 * association entre les saisons et des entiers
+	 * Association entre les saisons et des entiers
 	 */
 	public final static int WINTER = 3;
 	/**
-	 * tableau d'association des saisons à leur noms en français
+	 * Tableau d'association des saisons à leur noms en français
 	 */
 	public final static String[] SEASONS = {"Printemps", "Ete", "Automne", "Hiver"};
 	/**
-	 * entier représentant la saison en cours
+	 * Entier représentant la saison en cours
 	 */
 	private int season;
 	/**
-	 * booléen déterminant si la partie a été sauvegardée ou non
+	 * Booléen déterminant si la partie a été sauvegardée ou non
 	 */
 	private boolean saved;
 	/**
@@ -51,12 +51,12 @@ public abstract class Game extends Observable implements Serializable{
 	 */
 	protected ArrayList<Player> players;
 	/**
-	 * indice permettant de déterminer qui est le joueur courant
+	 * Indice permettant de déterminer qui est le joueur courant
 	 */
 	protected int currentPlayerIndex;
 	
 	/**
-	 * accesseur du booléen saved
+	 * Getter du booléen saved
 	 * @return boolean
 	 */
 	public boolean isSaved() {
@@ -64,7 +64,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * setter du booléen saved
+	 * Setter du booléen saved
 	 * @param saved
 	 */
 	public void setSaved(boolean saved) {
@@ -103,7 +103,7 @@ public abstract class Game extends Observable implements Serializable{
 	public abstract ArrayList<Player> designateWinner(); 
 	
 	/**
-	 * getter de la saison actuelle
+	 * Getter de la saison actuelle
 	 * @return int
 	 */
 	public int getSeason() {
@@ -112,7 +112,7 @@ public abstract class Game extends Observable implements Serializable{
 
 
 	/**
-	 * setter de season, notifie les observers en cas de changement
+	 * Setter de season, notifie les observers en cas de changement
 	 * @param season
 	 */
 	public void setSeason(int season) {
@@ -121,7 +121,8 @@ public abstract class Game extends Observable implements Serializable{
 		this.notifyObservers();
 	}
 	/**
-	 * getter de l'indice du joueur courant
+	 * 
+	 * Getter de l'indice du joueur courant
 	 * @return int
 	 */
 	public int getCurrentPlayerIndex() {
@@ -129,7 +130,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 
 	/**
-	 * getter de l'arraylist des joueurs
+	 * Getter de l'arraylist des joueurs
 	 * @return ArrayList<Player>
 	 */
 	public ArrayList<Player> getPlayers() {
@@ -137,7 +138,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * getter du joueur courant
+	 * Getter du joueur courant
 	 * @return Player
 	 */
 	public Player getCurrentPlayer() {
@@ -145,7 +146,7 @@ public abstract class Game extends Observable implements Serializable{
 	}
 	
 	/**
-	 * setter du joueur courant, notifie les observers en cas de changements
+	 * Setter du joueur courant, notifie les observers en cas de changements
 	 * @param index
 	 */
 	public void setCurrentPlayer(int index) {
@@ -153,6 +154,4 @@ public abstract class Game extends Observable implements Serializable{
 		this.setChanged();
 		this.notifyObservers(players.get(currentPlayerIndex));
 	}
-
-
 }

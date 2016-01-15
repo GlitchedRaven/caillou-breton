@@ -47,7 +47,7 @@ public class QuickGame extends Game {
 				return winner;
 			}
 	/**
-	 * constructeur de la partie rapide
+	 * Constructeur de la partie rapide, utilisant le constructeur d'une partie et il distribue les cartes.
 	 * @param numberAIPlayers : nombre de joueurs IA
 	 * @param aIDifficulties : difficulté des joueurs IA
 	 * @param aINames : nom des joueurs IA
@@ -62,7 +62,7 @@ public class QuickGame extends Game {
 	}
 
 	/**
-	 * méthode permettant de démarrer une partie rapide en GUI
+	 * Méthode permettant de démarrer une partie rapide en GUI.
 	 * @param g : partie rapide
 	 */
 	public static void main(String[] args, QuickGame g) {
