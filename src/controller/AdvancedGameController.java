@@ -18,12 +18,12 @@ import view.PlayerView;
 
 
 /**
- * La classe AdvancedGameController est le controlleur des parties avancée.
+ * La classe AdvancedGameController est le controleur des parties avancée.
  */
 public class AdvancedGameController extends GameController  {
 	
 	/**
-	 * Instantie un nouveau controlleur pour une partie avancée.
+	 * Instantie un nouveau controleur pour une partie avancée.
 	 * Ajoute les écouteurs de chaque carte.
 	 *
 	 * @param game le modèle de la partie

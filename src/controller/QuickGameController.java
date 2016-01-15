@@ -22,12 +22,12 @@ import view.PlayerView;
 
 // TODO: Auto-generated Javadoc
 /**
- * La classe QuickGameController est le controlleur des parties rapides.
+ * La classe QuickGameController est le controleur des parties rapides.
  */
 public class QuickGameController extends GameController{
 
 	/**
-	 * Instantiate un nouveau controlleur de partie rapide.
+	 * Instantiate un nouveau controleur de partie rapide.
 	 * Ajoute les écouteurs des cartes.
 	 *
 	 * @param game le modèle de la partie rapide

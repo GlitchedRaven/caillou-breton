@@ -24,7 +24,7 @@ public abstract class GameController  {
 	protected Game game;
 	
 	/**
-	 * Instantie un nouveau controlleur avec une vue graphique.
+	 * Instantie un nouveau controleur avec une vue graphique.
 	 *
 	 * @param game le modèle de la partie
 	 */
@@ -79,7 +79,7 @@ public abstract class GameController  {
 	public abstract void changePlayer();
 	
 	/**
-	 * Test si le joueur courante st une IA, si oui le controlleur la fait jouer.
+	 * Test si le joueur courante st une IA, si oui le controleur la fait jouer.
 	 *
 	 * @return true, si le joueur courant était une IA
 	 */
