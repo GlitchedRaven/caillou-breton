@@ -68,8 +68,7 @@ public class QuickGame extends Game {
 	 */
 	public static void main(String[] args, QuickGame g) {
 		
-		//QuickGame g = new QuickGame();
-		QuickGameController gc = new QuickGameController(g);
+		new QuickGameController(g);
 		
 	}
 }
