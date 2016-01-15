@@ -14,7 +14,7 @@ public class HumanPlayer extends Player{
 	 * Instantie un nouveau joueur humain.
 	 *
 	 * @param name le nom du joueur
-	 * @param lo02.utt.giboulot.canat.game la partie dont le joueur fera partie
+	 * @param game la partie dont le joueur fera partie
 	 */
 	public HumanPlayer(String name, Game game) {
 		super(name, game);

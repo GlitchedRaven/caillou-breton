@@ -23,7 +23,7 @@ public class CardView extends JButton implements Observer {
 	/**
 	 * Instancie une nouvelle vue pour une carte.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte à représenter
+	 * @param card la carte à représenter
 	 */
 	public CardView(Card card) {
 		super();

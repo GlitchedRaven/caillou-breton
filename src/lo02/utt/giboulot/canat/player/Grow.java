@@ -27,8 +27,8 @@ public class Grow implements Strategy, Serializable {
 	}
 	/**
 	 * Méthode permettant de mettre en oeuvre la stratégie.
-	 * @param lo02.utt.giboulot.canat.player : le joueur IA utilisant cette stratégie
-	 * @param lo02.utt.giboulot.canat.game : la partie courante
+	 * @param player : le joueur IA utilisant cette stratégie
+	 * @param game : la partie courante
 	 * @return
 	 */
 	@Override

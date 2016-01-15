@@ -21,7 +21,7 @@ public class MenhirMessage {
 	/**
 	 * Instancie un nouveau lo02.utt.giboulot.canat.message.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte sujette
+	 * @param card la carte sujette
 	 * @param type le type d'action demandé
 	 */
 	public MenhirMessage(Card card, TypeOfAction type) {

@@ -18,7 +18,7 @@ public class AIplayer extends Player {
 	 * Instancie une nouvelle IA .
 	 *
 	 * @param name le nom de l'IA
-	 * @param lo02.utt.giboulot.canat.game la partie dont l'IA fera partie
+	 * @param game la partie dont l'IA fera partie
 	 * @param strategy le mode de jeu de l'IA
 	 */
 	public AIplayer(String name, Game game, Strategy strategy) {

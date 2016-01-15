@@ -72,7 +72,7 @@ public abstract class Player extends Observable implements Serializable{
 	 * Le nombre de graines est retranché d'autant que la saison ( mis à 0 si négatif).
 	 * Le nombre de menhir est augmenté du nombre de graines retirées.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte jouée
+	 * @param card la carte jouée
 	 * @return une String expliquant l'action ayant eu lieue
 	 */
 	public String playFertilizer(Ingredient card) {
@@ -100,7 +100,7 @@ public abstract class Player extends Observable implements Serializable{
 	 * Le nombre de graines d'un joueur est augmenté d'un certain nombre.
 	 * Ce nombre est calculé à partir de la saison courante et du vecteur Géant de la carte jouée.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la caret jouée
+	 * @param card la carte jouée
 	 * @return une String expliquant l'action ayant eu lieue
 	 */
 	public String playGiant(Ingredient card) {
@@ -124,9 +124,9 @@ public abstract class Player extends Observable implements Serializable{
 	 * Ce nombre est calculé à partir de la méthode stealRocks(), de la saison courante
 	 * et du vecteur Farfadet de la carte jouée.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte jouée
+	 * @param card la carte jouée
 	 * @param victim la victime 
-	 * @return uen String expliquant l'action ayant eu lieue
+	 * @return une String expliquant l'action ayant eu lieue
 	 */
 	public String playFarfadet(Ingredient card, Player victim) {
 		int season = currentGame.getSeason();
@@ -153,7 +153,7 @@ public abstract class Player extends Observable implements Serializable{
 	 * Un certain nombre de menhir est diminué pour une victime choisie.
 	 * Ce nombre est calculé à partir de la saison courante et du vecteur force de l'allié joué.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte allié jouée
+	 * @param card la carte allié jouée
 	 * @param victim la victime
 	 * @return une String expliquant l'action ayant eu lieue
 	 */
@@ -176,7 +176,7 @@ public abstract class Player extends Observable implements Serializable{
 	 * Modifie le vecteur watchdogProtection d'un joueur pour le rendre égal
 	 * à celui de la carte allié jouée.
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte allié jouée
+	 * @param card la carte allié jouée
 	 * @return une String expliquant l'action ayant eu lieue
 	 */
 	public String playWatchDog(Ally card) {
@@ -194,7 +194,7 @@ public abstract class Player extends Observable implements Serializable{
 	 * Instancie un nouveau joueur.
 	 *
 	 * @param name le nom du joueur
-	 * @param lo02.utt.giboulot.canat.game la partie dont fera partie le joueur
+	 * @param game la partie dont fera partie le joueur
 	 */
 	public Player(String name, Game game) {
 		super();
@@ -305,7 +305,7 @@ public abstract class Player extends Observable implements Serializable{
 	/**
 	 * Setter de la main du joueur, ajoute une carte à cette main
 	 *
-	 * @param lo02.utt.giboulot.canat.card la carte a ajouter à la main
+	 * @param card la carte a ajouter à la main
 	 */
 	public void setHand(Card card) {
 		this.hand.add(card);

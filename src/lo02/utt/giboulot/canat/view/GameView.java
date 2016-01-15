@@ -147,7 +147,7 @@ public class GameView implements  Observer {
 	/**
 	 * Affiche les détails du joueur en paramètre dans la partie dédiée de la fenêtre.
 	 *
-	 * @param lo02.utt.giboulot.canat.player le joueur 
+	 * @param player le joueur 
 	 * 
 	 */
 	public void getPlayerDetails(Player player) {
@@ -187,7 +187,7 @@ public class GameView implements  Observer {
 	/**
 	 * Propose de piocher un allié plutôt que de commencer la partie avec des graînes.
 	 *
-	 * @param lo02.utt.giboulot.canat.player le joueur à qui l'on proposede piocher
+	 * @param player le joueur à qui l'on proposede piocher
 	 * @return true, si le joueur décide de piocher un allié
 	 */
 	public boolean choiceAllyOrRock(Player player) {

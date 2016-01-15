@@ -22,8 +22,8 @@ public class FirstCard implements Strategy,Serializable {
 	}
 	/**
 	 * Méthode permettant de mettre en oeuvre la stratégie.
-	 * @param lo02.utt.giboulot.canat.player le joueur IA qui utilise cette stratégie
-	 * @param lo02.utt.giboulot.canat.game la partie courante
+	 * @param player le joueur IA qui utilise cette stratégie
+	 * @param game la partie courante
 	 * @return
 	 */
 	@Override

@@ -30,7 +30,7 @@ public class PlayerView implements Observer {
 	/**
 	 * Intancie une nouvelle vue pour un joueur.
 	 *
-	 * @param lo02.utt.giboulot.canat.player le joueur à représenter.
+	 * @param player le joueur à représenter.
 	 */
 	public PlayerView(Player player) {
 		super();
