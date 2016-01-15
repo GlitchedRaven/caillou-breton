@@ -2,12 +2,15 @@ package game;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-//import java.util.Scanner;
 import java.util.Observable;
 import player.*;
 
 /**
  * Classe représentant la partie, elle possède les méthodes pour changer de saison et de joueurs.
+ * 
+ * 
+ * 
+ * 
  */
 public abstract class Game extends Observable implements Serializable{
 	

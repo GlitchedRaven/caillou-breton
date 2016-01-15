@@ -9,8 +9,12 @@ import controller.AdvancedGameController;
 //import player.AIplayer;
 //import player.HumanPlayer;
 import player.Player;
-//import view.Console;
 
+/**
+ * Classe représentant une partie avancée @see Game
+ * 
+ *
+ */
 public class AdvancedGame extends Game {
 	/**
 	 * 
@@ -20,7 +24,6 @@ public class AdvancedGame extends Game {
 	private int round;
 	private Deck allyDeck;
 	
-	//private Deck ingredientDeck;
 	
 	@Override
 	public ArrayList<Player> designateWinner() {
