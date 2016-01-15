@@ -1,6 +1,6 @@
 ﻿# caillou-breton
 
-Implementation of the menhir card game 
+Implementation of the menhir lo02.utt.giboulot.canat.card game 
 
 
 Pour lancer le jeu sous Windows, lancer le script menhir.sh
