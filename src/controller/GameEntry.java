@@ -10,15 +10,12 @@ import java.io.ObjectInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-//import javax.swing.JOptionPane;
+
 import javax.swing.SwingConstants;
 
 import game.AdvancedGame;
 import game.Game;
 import game.QuickGame;
-//import game.AdvancedGame;
-//import game.QuickGame;
-//import view.Console;
 import view.GameCreatorView;
 /**
  * Classe contenant la méthode main, elle sert de point d'entrée au jeu, en présentant l'option de créer ou de charger une partie.
@@ -27,9 +24,9 @@ import view.GameCreatorView;
  */
 public class GameEntry {	
 	/**
-	 * Méthode main qui va permettre le chargement d'une aprtie sauvegardée ou la création d'une nouvelle partie dans une fenêtre.
+	 * Méthode main qui va permettre le chargement d'une partie sauvegardée ou la création d'une nouvelle partie dans une fenêtre.
 	 * La partie sauvegardée doit être sérialisée dans le fichier sauvegarde.txt à la racine du projet.
-	 * Pour créer une partie, on fait appel  à la fonction GameCreatorView.
+	 * Pour créer une partie, on fait appel  à la méthode GameCreatorView().
 	 * @see view.GameCreatorView
 	 * @throws IOException
 	 */

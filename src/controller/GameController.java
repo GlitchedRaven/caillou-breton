@@ -9,10 +9,25 @@ import java.io.ObjectOutputStream;
 import game.Game;
 import view.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * La classe GameController est le minimum nécessaire pour controller une partie et sa vue.
+ * La classe est adaptée pour une utilisation sur des vues graphiques. Elle s'occupe principalement d'ajouter les 
+ * écouteurs à chaque boutton et à mettre à jour le modèle à chaque fin de tour.
+ */
 public abstract class GameController  {
+	
+	/** La vue de de la partie */
 	protected GameView gv;
+	
+	/** Le modèle de la partie. */
 	protected Game game;
 	
+	/**
+	 * Instantie un nouveau controlleur avec une vue graphique.
+	 *
+	 * @param game le modèle de la partie
+	 */
 	public GameController(Game game) {
 		
 		super();
@@ -44,12 +59,30 @@ public abstract class GameController  {
 		
 	}
 
+	/**
+	 * Getter de la vue de la partie.
+	 *
+	 * @return the gv
+	 */
 	public GameView getGv() {
 		return gv;
 	}
 	
+	/**
+	 * Met à jour la saison du modèle.
+	 */
 	public abstract void changeSeason();
+	
+	/**
+	 * Met à jour le joueur courant du modèle
+	 */
 	public abstract void changePlayer();
+	
+	/**
+	 * Test si le joueur courante st une IA, si oui le controlleur la fait jouer.
+	 *
+	 * @return true, si le joueur courant était une IA
+	 */
 	public abstract boolean testAIPlay();
 	
 }

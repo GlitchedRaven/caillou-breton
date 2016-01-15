@@ -16,7 +16,18 @@ import player.Player;
 import view.CardView;
 import view.PlayerView;
 
+
+/**
+ * La classe AdvancedGameController est le controlleur des parties avancée.
+ */
 public class AdvancedGameController extends GameController  {
+	
+	/**
+	 * Instantie un nouveau controlleur pour une partie avancée.
+	 * Ajoute les écouteurs de chaque carte.
+	 *
+	 * @param game le modèle de la partie
+	 */
 	public AdvancedGameController(AdvancedGame game) {
 		super(game);
 		//Card distribution
@@ -49,6 +60,9 @@ public class AdvancedGameController extends GameController  {
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see controller.GameController#changeSeason()
+	 */
 	@Override
 	public void changeSeason() {
 		int season = game.getSeason();
@@ -56,6 +70,11 @@ public class AdvancedGameController extends GameController  {
 		else game.setSeason(season+1);
 	}
 
+	/**
+	 * Passe à la manche suivante. 
+	 * Pour cela la méthode refait la distribution des cartes et ajoute les écouteurs à chacune des nouvelles cartes.
+	 * Si c'était le dernier round, la méthode appelle la méthode displayWinner() à la place.
+	 */
 	private void changeRound() {
 		if(((AdvancedGame) game).getRound() < game.getPlayers().size()) {
 			((AdvancedGame) game).setRound();
@@ -89,6 +108,9 @@ public class AdvancedGameController extends GameController  {
 			gv.displayWinner(game.designateWinner());
 	}
 
+	/* (non-Javadoc)
+	 * @see controller.GameController#changePlayer()
+	 */
 	@Override
 	public void changePlayer() {
 		int season = game.getSeason();
@@ -111,6 +133,9 @@ public class AdvancedGameController extends GameController  {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see controller.GameController#testAIPlay()
+	 */
 	@Override
 	public boolean testAIPlay() {
 		int currentIndex = game.getCurrentPlayerIndex();
@@ -125,6 +150,17 @@ public class AdvancedGameController extends GameController  {
 			return false;
 	}
 	
+	/**
+	 * Ajoute un écouteur sur une carte.
+	 * Chaque carte, si on clique dessus, propose les différentes actions possibles selon que la carte soit un Ingrédient
+	 * ou un Allié et lance la méthode adéquate une fois l'action choisie.
+	 * Une fois cela fait on change le joueur courant par un appel à la méthode changePlayer().
+	 * Cette méthode privée est là pour faciliter la lecture du code.
+	 *
+	 * @param playedCard la carte sur laquelle on veut ajouter l'écouteur
+	 * @param cv la vue de cette carte
+	 * @param currentPlayer le possesseur de la carte
+	 */
 	private void addCardListener(Card playedCard, CardView cv, Player currentPlayer) {
 		if(playedCard instanceof Ingredient) {
 			cv.addActionListener(new ActionListener() {
