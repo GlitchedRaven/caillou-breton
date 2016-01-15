@@ -10,22 +10,18 @@ public class Ally extends Card {
 	
 	
 	private static final long serialVersionUID = 2339940190410564043L;
-	
-	/** The Constant GIANTMOLE. */
 	public final static int GIANTMOLE = 0;
-	
-	/** The Constant WATCHDOG. */
 	public final static int WATCHDOG = 1;
 	
 	
-	/** The Constant TYPES. */
+	/** Définit les types d'alliés du jeu. */
 	public final static int[] TYPES = {GIANTMOLE, WATCHDOG}; 
 	
 
 	/**
-	 * Retourne le type de l'allié
+	 * Retourne le type de l'allié.
 	 *
-	 * @return the ally type
+	 * @return le type de l'allié
 	 */
 	public int getAllyType() {
 		return allyType;
@@ -40,7 +36,7 @@ public class Ally extends Card {
 	/**
 	 * Retourne le vecteur force.
 	 *
-	 * @return the strength vector
+	 * @return le vecteur force
 	 */
 	public int[] getStrengthVector() {
 		return strengthVector;
@@ -48,7 +44,7 @@ public class Ally extends Card {
 
 
 	/**
-	 * Instantie une nouvelle carte allié
+	 * Instancie une nouvelle carte allié
 	 *
 	 * @param name étant le nom de la carte
 	 * @param strengthVector étant le vecteur force

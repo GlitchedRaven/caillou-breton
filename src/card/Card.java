@@ -9,7 +9,6 @@ import java.util.Observable;
  */
 public abstract class Card extends Observable implements Serializable {
 	
-	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -5662936268956965034L;
 	
 	/** Nom de la carte */

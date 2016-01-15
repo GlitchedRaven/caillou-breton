@@ -114,7 +114,7 @@ public class Deck extends LinkedList<Card> {
 }
 	
 	/**
-	 * Distribue un certains nombre de cartes à une liste de joueur
+	 * Distribue un certain nombre de cartes à une liste de joueur
 	 *
 	 * @param numberToDistribute est le nombre de carte à distribuer à chaque joueur
 	 * @param players sont les joueurs à qui distribuer les cartes
@@ -132,7 +132,7 @@ public class Deck extends LinkedList<Card> {
 
 	
 	/**
-	 * Instantie un nouveau deck.
+	 * Instancie un nouveau deck.
 	 *
 	 * @param typeOfDeck est le type de deck
 	 */
