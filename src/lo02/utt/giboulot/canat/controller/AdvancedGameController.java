@@ -22,10 +22,10 @@ import lo02.utt.giboulot.canat.view.PlayerView;
 public class AdvancedGameController extends GameController  {
 	
 	/**
-	 * Instantie un nouveau controleur pour une partie avancée.
+	 * Instancie un nouveau controleur pour une partie avancée.
 	 * Ajoute les écouteurs de chaque carte.
 	 *
-	 * @param lo02.utt.giboulot.canat.game le modèle de la partie
+	 * @param game le modèle de la partie
 	 */
 	public AdvancedGameController(AdvancedGame game) {
 		super(game);
@@ -88,7 +88,7 @@ public class AdvancedGameController extends GameController  {
 					}
 				}
 			}
-			//END lo02.utt.giboulot.canat.card distribution
+			//END card distribution
 			//Add listeners
 			for(ListIterator<PlayerView> it = gv.getPlayerViews().listIterator(); it.hasNext();) {
 				PlayerView pv = it.next();
@@ -108,7 +108,7 @@ public class AdvancedGameController extends GameController  {
 	}
 
 	/* (non-Javadoc)
-	 * @see lo02.utt.giboulot.canat.controller.GameController#changePlayer()
+	 * @see GameController#changePlayer()
 	 */
 	@Override
 	public void changePlayer() {
@@ -133,7 +133,7 @@ public class AdvancedGameController extends GameController  {
 	}
 
 	/* (non-Javadoc)
-	 * @see lo02.utt.giboulot.canat.controller.GameController#testAIPlay()
+	 * @see GameController#testAIPlay()
 	 */
 	@Override
 	public boolean testAIPlay() {

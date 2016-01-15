@@ -11,9 +11,9 @@ import lo02.utt.giboulot.canat.view.*;
 
 
 /**
- * La classe GameController est le minimum nécessaire pour lo02.utt.giboulot.canat.controller une partie et sa vue.
+ * La classe GameController est le minimum nécessaire pour controler une partie et sa vue.
  * La classe est adaptée pour une utilisation sur des vues graphiques. Elle s'occupe principalement d'ajouter les 
- * écouteurs à chaque boutton et à mettre à jour le modèle à chaque fin de tour.
+ * écouteurs à chaque bouton et à mettre à jour le modèle à chaque fin de tour.
  */
 public abstract class GameController  {
 	
@@ -24,9 +24,9 @@ public abstract class GameController  {
 	protected Game game;
 	
 	/**
-	 * Instantie un nouveau controleur avec une vue graphique.
+	 * Instancie un nouveau controleur avec une vue graphique.
 	 *
-	 * @param lo02.utt.giboulot.canat.game le modèle de la partie
+	 * @param game le modèle de la partie
 	 */
 	public GameController(Game game) {
 		
@@ -62,7 +62,7 @@ public abstract class GameController  {
 	/**
 	 * Getter de la vue de la partie.
 	 *
-	 * @return the gv
+	 * @return la vue de la partie
 	 */
 	public GameView getGv() {
 		return gv;
@@ -79,7 +79,7 @@ public abstract class GameController  {
 	public abstract void changePlayer();
 	
 	/**
-	 * Test si le joueur courante st une IA, si oui le controleur la fait jouer.
+	 * Test si le joueur courant est une IA, si oui le controleur la fait jouer.
 	 *
 	 * @return true, si le joueur courant était une IA
 	 */

@@ -24,10 +24,10 @@ import lo02.utt.giboulot.canat.view.PlayerView;
 public class QuickGameController extends GameController{
 
 	/**
-	 * Instantiate un nouveau controleur de partie rapide.
+	 * Instancie un nouveau controleur de partie rapide.
 	 * Ajoute les écouteurs des cartes.
 	 *
-	 * @param lo02.utt.giboulot.canat.game le modèle de la partie rapide
+	 * @param game le modèle de la partie rapide
 	 */
 	public QuickGameController(QuickGame game) {
 		super(game);
@@ -50,9 +50,9 @@ public class QuickGameController extends GameController{
 	
 			
 	/**
-	 * Choice action.
+	 * Ouvre un JOption_pane qui va permettre de choisir l'action à effectuer (géant, farfadet ou engrais).
 	 *
-	 * @return the string
+	 * @return l'action choisie	 
 	 */
 	public String choiceAction() {
 		Object[] opt = {"Geant", "Engrais", "Farfadet"};
