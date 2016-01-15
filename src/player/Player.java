@@ -208,18 +208,18 @@ public abstract class Player extends Observable implements Serializable{
 
 
 	/**
-	 * Gets the nb rocks.
+	 * Getter du nombre de cailloux possédés par le joueur
 	 *
-	 * @return the nb rocks
+	 * @return le nombre de cailloux
 	 */
 	public int getNbRocks() {
 		return nbRocks;
 	}
 	
 	/**
-	 * Sets the nb rocks.
+	 * Setter du nombre de cailloux possédés par le joueur
 	 *
-	 * @param nbRocks the new nb rocks
+	 * @param nbRocks le nouveau nombre de cailloux
 	 */
 	public void setNbRocks(int nbRocks) {
 		if(nbRocks > 0)
@@ -232,18 +232,18 @@ public abstract class Player extends Observable implements Serializable{
 	}
 
 	/**
-	 * Gets the nb menhirs.
+	 * Getter du nombre de menhirs possédés par le joueur.
 	 *
-	 * @return the nb menhirs
+	 * @return le nombre de menhirs
 	 */
 	public int getNbMenhirs() {
 		return nbMenhirs;
 	}
 	
 	/**
-	 * Sets the nb menhirs.
+	 * Setter du nombre de menhirs possédés par le joueur
 	 *
-	 * @param nbMenhirs the new nb menhirs
+	 * @param nbMenhirs le nouveau nombre de menhirs
 	 */
 	public void setNbMenhirs(int nbMenhirs) {
 		if(nbMenhirs > 0)
@@ -257,18 +257,18 @@ public abstract class Player extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Gets the watch dog protection.
+	 * Getter de la protection du chien de garde.
 	 *
-	 * @return the watch dog protection
+	 * @return la protection du chien de garde
 	 */
 	public int[] getWatchDogProtection() {
 		return watchDogProtection;
 	}
 	
 	/**
-	 * Sets the watch dog protection.
+	 * Setter de la protection du chien de garde.
 	 *
-	 * @param watchDogProtection the new watch dog protection
+	 * @param watchDogProtection la nouvelle protection chien de garde
 	 */
 	public void setWatchDogProtection(int[] watchDogProtection) {
 		this.watchDogProtection = watchDogProtection;
@@ -277,7 +277,7 @@ public abstract class Player extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Clear hand.
+	 * Vide la main.
 	 */
 	public void clearHand() {
 		this.hand.clear();
@@ -286,27 +286,27 @@ public abstract class Player extends Observable implements Serializable{
 	}
 		
 	/**
-	 * Gets the name.
+	 * Getter du nom du joueur.
 	 *
-	 * @return the name
+	 * @return le nom
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * Gets the hand.
+	 * Getter de la main du joueur.
 	 *
-	 * @return the hand
+	 * @return la main du joueur
 	 */
 	public ArrayList<Card> getHand() {
 		return hand;
 	}
 
 	/**
-	 * Sets the hand.
+	 * Setter de la main du joueur, ajoute une carte à cette main
 	 *
-	 * @param card the new hand
+	 * @param card la carte a ajouter à la main
 	 */
 	public void setHand(Card card) {
 		this.hand.add(card);
@@ -324,9 +324,9 @@ public abstract class Player extends Observable implements Serializable{
 	}
 	
 	/**
-	 * Gets the current game.
+	 * Getter de la partie courante.
 	 *
-	 * @return the current game
+	 * @return la partie courante
 	 */
 	public Game getCurrentGame() {
 		return currentGame;
