@@ -2,7 +2,6 @@ package player;
 
 import game.Game;
 
-// TODO: Auto-generated Javadoc
 /**
  * L'interface Strategy fait partie du patron de conception Strategy et spécifie la méthode playACard()
  * pour les IA.

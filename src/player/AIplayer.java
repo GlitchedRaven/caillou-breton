@@ -2,7 +2,6 @@ package player;
 
 import game.Game;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe AIplayer représente une intelligence artficielle joueuse.
  * Elle utilise le patron de conception Strategy pour modéliser les différents niveau de difficultés.
@@ -14,7 +13,6 @@ public class AIplayer extends Player {
 	
 	/** Le mode de jeu de l'IA */
 	private Strategy strategy;
-	//private Thread t;
 
 	/**
 	 * Instancie une nouvelle IA .

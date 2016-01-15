@@ -14,11 +14,6 @@ import game.Game;
  */
 public class FirstCard implements Strategy,Serializable {
 	
-	
-	
-	/**
-	 * serialVersionUID nécessaire à la sérialisation.
-	 */
 	private static final long serialVersionUID = 6461900873620043023L;
 	/**
 	 * Instancie un objet de la classe FirstCard.
@@ -28,8 +23,8 @@ public class FirstCard implements Strategy,Serializable {
 	}
 	/**
 	 * Méthode permettant de mettre en oeuvre la stratégie.
-	 * @param player : le joueur IA qui utilise cette stratégie
-	 * @param game : la partie courante
+	 * @param player le joueur IA qui utilise cette stratégie
+	 * @param game la partie courante
 	 * @return
 	 */
 	@Override

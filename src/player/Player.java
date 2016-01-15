@@ -10,7 +10,6 @@ import game.*;
 import card.*;
 import message.*;
 
-// TODO: Auto-generated Javadoc
 /**
  * La classe Player représente le squelette minimum d'un joueur.
  */
