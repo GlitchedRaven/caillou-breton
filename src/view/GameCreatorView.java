@@ -14,7 +14,7 @@ import game.AdvancedGame;
 import game.QuickGame;
 /**
  * Cette classe permet la création de parties via une interface graphique composée de JOption_pane et d'une fenêtre de choix entre partie rapide
- * et partie avancée et vérifie qu'une aprtie ne contienne pas plus de 6 joueurs (IA et humains). L'ordre de jeu est déterminé par l'ordre de création des joueurs ainsi
+ * et partie avancée et vérifie qu'une partie ne contienne pas plus de 6 joueurs (IA et humains). L'ordre de jeu est déterminé par l'ordre de création des joueurs ainsi
  * Les joueurs IA jouent toujours avant les joueurs humains.
  * Pour le lancement de la partie un appel est réalisé au main de la partie concernée.
  * @see game.QuickGame, game.AdvancedGame, game.Game
