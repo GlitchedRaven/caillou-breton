@@ -20,7 +20,7 @@ public abstract class Card extends Observable implements Serializable {
 	/**
 	 * Instancie une nouvelle carte à partir de son nom.
 	 *
-	 * @param name le nom de la carte
+	 * @param name le nom de la carteyl
 	 */
 	public Card(String name) {
 		super();
